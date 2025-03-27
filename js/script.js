@@ -49,33 +49,25 @@ document.addEventListener('DOMContentLoaded', function() {
         return new bootstrap.Tooltip(tooltipTriggerEl);
     });
 
-    // Menu lateral
+    // Menu Toggle Functionality
+    const menuToggle = document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('.sidebar');
     const sidebarOverlay = document.querySelector('.sidebar-overlay');
-    const menuToggle = document.querySelector('.menu-toggle');
+    const content = document.querySelector('#content');
+    const body = document.body;
 
     function toggleMenu() {
         sidebar.classList.toggle('active');
         sidebarOverlay.classList.toggle('active');
-        document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
-        
-        // Update ARIA attributes
-        const isExpanded = sidebar.classList.contains('active');
-        menuToggle.setAttribute('aria-expanded', isExpanded);
-        sidebar.setAttribute('aria-hidden', !isExpanded);
+        menuToggle.classList.toggle('active');
+        content.classList.toggle('sidebar-active');
+        body.classList.toggle('menu-open');
     }
 
-    if (menuToggle) {
-        menuToggle.addEventListener('click', toggleMenu);
-        menuToggle.setAttribute('aria-controls', 'sidebar');
-        menuToggle.setAttribute('aria-expanded', 'false');
-    }
+    menuToggle.addEventListener('click', toggleMenu);
+    sidebarOverlay.addEventListener('click', toggleMenu);
 
-    if (sidebarOverlay) {
-        sidebarOverlay.addEventListener('click', toggleMenu);
-    }
-
-    // Close menu when clicking a link on mobile
+    // Close menu when clicking a link
     const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
     sidebarLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -85,23 +77,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Handle window resize with debounce
+    // Close menu on window resize if open
     let resizeTimer;
-    function handleResize() {
+    window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-            if (window.innerWidth > 768) {
-                sidebar.classList.remove('active');
-                sidebarOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-                menuToggle.setAttribute('aria-expanded', 'false');
-                sidebar.setAttribute('aria-hidden', 'false');
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth > 768 && sidebar.classList.contains('active')) {
+                toggleMenu();
             }
         }, 250);
-    }
+    });
 
-    window.addEventListener('resize', handleResize);
-    handleResize();
+    // Prevent touch events from scrolling the body when menu is open
+    document.addEventListener('touchmove', (e) => {
+        if (body.classList.contains('menu-open')) {
+            e.preventDefault();
+        }
+    }, { passive: false });
 
     // Smooth scrolling with offset for fixed header
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
