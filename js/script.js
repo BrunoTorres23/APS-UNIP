@@ -85,29 +85,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Handle window resize
+    // Handle window resize with debounce
+    let resizeTimer;
     function handleResize() {
-        if (window.innerWidth > 768) {
-            sidebar.classList.remove('active');
-            sidebarOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-            menuToggle.setAttribute('aria-expanded', 'false');
-            sidebar.setAttribute('aria-hidden', 'false');
-        }
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if (window.innerWidth > 768) {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                menuToggle.setAttribute('aria-expanded', 'false');
+                sidebar.setAttribute('aria-hidden', 'false');
+            }
+        }, 250);
     }
 
     window.addEventListener('resize', handleResize);
     handleResize();
 
-    // Smooth scrolling
+    // Smooth scrolling with offset for fixed header
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
                 });
             }
         });
@@ -122,13 +130,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Enhanced card animations
-    const cards = document.querySelectorAll('.feature-card, .impact-card, .solution-card, .reference-card');
+    // Enhanced card animations with touch support
+    const cards = document.querySelectorAll('.feature-card, .impact-card, .solution-card, .reference-card, .data-card, .case-card, .implementation-card, .additional-card');
     cards.forEach(card => {
+        // Touch events
+        card.addEventListener('touchstart', () => {
+            card.style.transform = 'translateY(-5px)';
+            card.style.boxShadow = 'var(--shadow-lg)';
+        });
+
+        card.addEventListener('touchend', () => {
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = 'var(--shadow-sm)';
+        });
+
+        // Mouse events
         card.addEventListener('mouseenter', () => {
             card.style.transform = 'translateY(-5px)';
             card.style.boxShadow = 'var(--shadow-lg)';
         });
+
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'translateY(0)';
             card.style.boxShadow = 'var(--shadow-sm)';
@@ -136,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Intersection Observer for fade-in animations
-    const fadeElements = document.querySelectorAll('.feature-card, .impact-card, .solution-card, .reference-card');
+    const fadeElements = document.querySelectorAll('.feature-card, .impact-card, .solution-card, .reference-card, .data-card, .case-card, .implementation-card, .additional-card');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -153,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-    // Parallax effect for header
+    // Optimized parallax effect
     let ticking = false;
     window.addEventListener('scroll', function() {
         if (!ticking) {
@@ -166,4 +187,11 @@ document.addEventListener('DOMContentLoaded', function() {
             ticking = true;
         }
     });
+
+    // Touch event handling for better mobile experience
+    document.addEventListener('touchmove', function(e) {
+        if (e.target.closest('.sidebar') && window.innerWidth <= 768) {
+            e.preventDefault();
+        }
+    }, { passive: false });
 }); 
