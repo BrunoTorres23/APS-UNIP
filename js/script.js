@@ -64,15 +64,32 @@ document.addEventListener('DOMContentLoaded', function() {
         body.classList.toggle('menu-open');
     }
 
-    menuToggle.addEventListener('click', toggleMenu);
-    sidebarOverlay.addEventListener('click', toggleMenu);
+    function closeMenu() {
+        if (sidebar.classList.contains('active')) {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            menuToggle.classList.remove('active');
+            content.classList.remove('sidebar-active');
+            body.classList.remove('menu-open');
+        }
+    }
 
-    // Close menu when clicking a link
+    menuToggle.addEventListener('click', toggleMenu);
+    sidebarOverlay.addEventListener('click', closeMenu);
+
+    // Handle menu links
     const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
     sidebarLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
-                toggleMenu();
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                closeMenu();
+                
+                // Small delay to allow menu to close before navigation
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 300);
             }
         });
     });
@@ -82,8 +99,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-            if (window.innerWidth > 768 && sidebar.classList.contains('active')) {
-                toggleMenu();
+            if (window.innerWidth > 768) {
+                closeMenu();
             }
         }, 250);
     });
@@ -92,6 +109,24 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('touchmove', (e) => {
         if (body.classList.contains('menu-open')) {
             e.preventDefault();
+        }
+    }, { passive: false });
+
+    // Handle touch events for menu
+    document.addEventListener('touchstart', (e) => {
+        if (window.innerWidth <= 768) {
+            const target = e.target;
+            if (target.closest('.sidebar-nav a')) {
+                e.preventDefault();
+                const link = target.closest('.sidebar-nav a');
+                const href = link.getAttribute('href');
+                closeMenu();
+                
+                // Small delay to allow menu to close before navigation
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 300);
+            }
         }
     }, { passive: false });
 

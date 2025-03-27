@@ -687,6 +687,37 @@ section h2::after {
         padding: 1rem 1.5rem;
         border-left: none;
         border-bottom: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 44px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .sidebar-nav a i {
+        width: 24px;
+        margin-right: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .sidebar-nav a span {
+        opacity: 1;
+        font-size: 1rem;
+    }
+
+    .sidebar-nav a:active {
+        background: rgba(74, 144, 226, 0.2);
+    }
+
+    .sidebar-nav a.active {
+        background: rgba(74, 144, 226, 0.15);
+        border-left: none;
+        border-bottom: 1px solid var(--accent-color);
+    }
+
+    .sidebar-nav a.active i {
+        color: var(--accent-color);
     }
 
     .sidebar-nav a:hover {
@@ -694,9 +725,32 @@ section h2::after {
         border-left: none;
     }
 
-    .sidebar-nav a.active {
-        background: rgba(74, 144, 226, 0.15);
-        border-left: none;
+    .sidebar-nav a:hover i {
+        color: var(--accent-color);
+    }
+
+    /* Improve touch targets */
+    .sidebar-nav a,
+    .menu-toggle,
+    .theme-toggle {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Prevent text selection during touch */
+    .sidebar-nav a,
+    .menu-toggle,
+    .theme-toggle {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    /* Add visual feedback for touch */
+    .sidebar-nav a:active,
+    .menu-toggle:active,
+    .theme-toggle:active {
+        opacity: 0.7;
     }
 
     .sidebar-header {
