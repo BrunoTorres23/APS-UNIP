@@ -44,10 +44,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Initialize tooltips
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    if(document.querySelectorAll('[data-bs-toggle="tooltip"]')){
+           var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl);
     });
+    }
+ 
 
     // Menu Toggle Functionality
     const menuToggle = document.querySelector('.menu-toggle');
@@ -208,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
             window.requestAnimationFrame(function() {
                 const header = document.querySelector('header');
                 const scrolled = window.pageYOffset;
-                header.style.transform = `translateY(${scrolled * 0.5}px)`;
+                header.style.transform = `translateY(${scrolled * 1}px)`;
                 ticking = false;
             });
             ticking = true;
