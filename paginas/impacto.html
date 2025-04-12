@@ -26,38 +26,38 @@
     <div class="bg-wrapper lazy-background" style="--bg-image: url('../images/direito-e-sustentabilidade.jpg');"></div>
 
     <!-- Sidebar -->
-    <nav class="sidebar">
+    <nav class="sidebar" role="navigation" aria-label="Menu principal">
         <div class="sidebar-header">
-            <i class="bi bi-leaf-fill"></i>
+            <i class="bi bi-leaf-fill" aria-hidden="true"></i>
         </div>
-        <ul class="sidebar-nav">
-            <li>
-                <a href="../index.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Início">
-                    <i class="bi bi-house-door"></i>
+        <ul class="sidebar-nav" role="menubar">
+            <li role="none">
+                <a href="../index.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Início" role="menuitem">
+                    <i class="bi bi-house-door" aria-hidden="true"></i>
                     <span>Início</span>
                 </a>
             </li>
-            <li>
-                <a href="./tecnologias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Tecnologias Verdes">
-                    <i class="bi bi-cpu"></i>
+            <li role="none">
+                <a href="./tecnologias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Tecnologias Verdes" role="menuitem">
+                    <i class="bi bi-cpu" aria-hidden="true"></i>
                     <span>Tecnologias Verdes</span>
                 </a>
             </li>
-            <li>
-                <a href="./impacto.html" class="nav-link active" data-bs-toggle="tooltip" data-bs-placement="right" title="Impacto Ambiental">
-                    <i class="bi bi-graph-up"></i>
+            <li role="none">
+                <a href="./impacto.html" class="nav-link active" data-bs-toggle="tooltip" data-bs-placement="right" title="Impacto Ambiental" role="menuitem" aria-current="page">
+                    <i class="bi bi-graph-up" aria-hidden="true"></i>
                     <span>Impacto Ambiental</span>
                 </a>
             </li>
-            <li>
-                <a href="./solucoes.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Soluções Sustentáveis">
-                    <i class="bi bi-lightbulb"></i>
+            <li role="none">
+                <a href="./solucoes.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Soluções Sustentáveis" role="menuitem">
+                    <i class="bi bi-lightbulb" aria-hidden="true"></i>
                     <span>Soluções Sustentáveis</span>
                 </a>
             </li>
-            <li>
-                <a href="./referencias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Referências">
-                    <i class="bi bi-book"></i>
+            <li role="none">
+                <a href="./referencias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Referências" role="menuitem">
+                    <i class="bi bi-book" aria-hidden="true"></i>
                     <span>Referências</span>
                 </a>
             </li>
@@ -65,15 +65,15 @@
     </nav>
 
     <!-- Sidebar Overlay -->
-    <div class="sidebar-overlay"></div>
+    <div class="sidebar-overlay" aria-hidden="true"></div>
 
     <!-- Main Content -->
-    <main id="content">
+    <main id="content" role="main">
         <!-- Header -->
-        <header>
+        <header role="banner">
             <div class="container">
-                <button class="menu-toggle d-md-none">
-                    <i class="bi bi-list"></i>
+                <button class="menu-toggle d-md-none" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+                    <i class="bi bi-list" aria-hidden="true"></i>
                 </button>
                 <h1>Impacto Ambiental</h1>
                 <p>Análise dos efeitos da tecnologia no meio ambiente</p>
@@ -81,7 +81,7 @@
         </header>
 
         <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb">
+        <nav aria-label="Navegação estrutural">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Início</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Impacto Ambiental</li>
@@ -89,9 +89,10 @@
         </nav>
 
         <!-- Impact Section -->
-        <section class="impact-section">
-            <div class="impact-card">
-                <i class="bi bi-globe"></i>
+        <section class="impact-section" aria-labelledby="impact-heading">
+            <h2 id="impact-heading" class="visually-hidden">Impactos Ambientais</h2>
+            <div class="impact-card" tabindex="0">
+                <i class="bi bi-globe" aria-hidden="true"></i>
                 <h3>Mudanças Climáticas</h3>
                 <p>O impacto da tecnologia no clima global:</p>
                 <ul>
@@ -102,8 +103,8 @@
                 </ul>
             </div>
 
-            <div class="impact-card">
-                <i class="bi bi-water"></i>
+            <div class="impact-card" tabindex="0">
+                <i class="bi bi-water" aria-hidden="true"></i>
                 <h3>Recursos Hídricos</h3>
                 <p>Efeitos no ciclo da água:</p>
                 <ul>

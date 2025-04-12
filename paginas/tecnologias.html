@@ -23,58 +23,58 @@
     <a href="#content" class="skip-link">Pular para o conteúdo principal</a>
 
     <div class="bg-wrapper lazy-background" style="--bg-image: url('../images/direito-e-sustentabilidade.jpg');"></div>
-    <nav class="sidebar">
+    <nav class="sidebar" role="navigation" aria-label="Menu principal">
         <div class="sidebar-header">
-            <i class="bi bi-leaf-fill"></i>
+            <i class="bi bi-leaf-fill" aria-hidden="true"></i>
         </div>
-        <ul class="sidebar-nav">
-            <li>
-                <a href="../index.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Início">
-                    <i class="bi bi-house-door"></i>
+        <ul class="sidebar-nav" role="menubar">
+            <li role="none">
+                <a href="../index.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Início" role="menuitem">
+                    <i class="bi bi-house-door" aria-hidden="true"></i>
                     <span>Início</span>
                 </a>
             </li>
-            <li>
-                <a href="./tecnologias.html" class="nav-link active" data-bs-toggle="tooltip" data-bs-placement="right" title="Tecnologias Verdes">
-                    <i class="bi bi-cpu"></i>
+            <li role="none">
+                <a href="./tecnologias.html" class="nav-link active" data-bs-toggle="tooltip" data-bs-placement="right" title="Tecnologias Verdes" role="menuitem" aria-current="page">
+                    <i class="bi bi-cpu" aria-hidden="true"></i>
                     <span>Tecnologias Verdes</span>
                 </a>
             </li>
-            <li>
-                <a href="./impacto.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Impacto Ambiental">
-                    <i class="bi bi-graph-up"></i>
+            <li role="none">
+                <a href="./impacto.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Impacto Ambiental" role="menuitem">
+                    <i class="bi bi-graph-up" aria-hidden="true"></i>
                     <span>Impacto Ambiental</span>
                 </a>
             </li>
-            <li>
-                <a href="./solucoes.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Soluções Sustentáveis">
-                    <i class="bi bi-lightbulb"></i>
+            <li role="none">
+                <a href="./solucoes.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Soluções Sustentáveis" role="menuitem">
+                    <i class="bi bi-lightbulb" aria-hidden="true"></i>
                     <span>Soluções Sustentáveis</span>
                 </a>
             </li>
-            <li>
-                <a href="./referencias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Referências">
-                    <i class="bi bi-book"></i>
+            <li role="none">
+                <a href="./referencias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Referências" role="menuitem">
+                    <i class="bi bi-book" aria-hidden="true"></i>
                     <span>Referências</span>
                 </a>
             </li>
         </ul>
     </nav>
 
-    <div class="sidebar-overlay"></div>
+    <div class="sidebar-overlay" aria-hidden="true"></div>
 
-    <main id="content">
-        <header>
+    <main id="content" role="main">
+        <header role="banner">
             <div class="container">
-                <button class="menu-toggle d-md-none">
-                    <i class="bi bi-list"></i>
+                <button class="menu-toggle d-md-none" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+                    <i class="bi bi-list" aria-hidden="true"></i>
                 </button>
                 <h1>Tecnologias Verdes</h1>
                 <p>Inovações tecnológicas para um futuro sustentável</p>
             </div>
         </header>
 
-        <nav aria-label="breadcrumb">
+        <nav aria-label="Navegação estrutural">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Início</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Tecnologias Verdes</li>

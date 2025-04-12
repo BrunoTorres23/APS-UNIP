@@ -40,38 +40,38 @@
     </svg>
 
     <!-- Sidebar -->
-    <nav class="sidebar">
+    <nav class="sidebar" role="navigation" aria-label="Menu principal">
         <div class="sidebar-header">
-            <i class="bi bi-leaf-fill"></i>
+            <i class="bi bi-leaf-fill" aria-hidden="true"></i>
         </div>
-        <ul class="sidebar-nav">
-            <li>
-                <a href="./index.html" class="nav-link active" data-bs-toggle="tooltip" data-bs-placement="right" title="Início">
-                    <i class="bi bi-house-door"></i>
+        <ul class="sidebar-nav" role="menubar">
+            <li role="none">
+                <a href="./index.html" class="nav-link active" data-bs-toggle="tooltip" data-bs-placement="right" title="Início" role="menuitem" aria-current="page">
+                    <i class="bi bi-house-door" aria-hidden="true"></i>
                     <span>Início</span>
                 </a>
             </li>
-            <li>
-                <a href="./paginas/tecnologias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Tecnologias Verdes">
-                    <i class="bi bi-cpu"></i>
+            <li role="none">
+                <a href="./paginas/tecnologias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Tecnologias Verdes" role="menuitem">
+                    <i class="bi bi-cpu" aria-hidden="true"></i>
                     <span>Tecnologias Verdes</span>
                 </a>
             </li>
-            <li>
-                <a href="./paginas/impacto.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Impacto Ambiental">
-                    <i class="bi bi-graph-up"></i>
+            <li role="none">
+                <a href="./paginas/impacto.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Impacto Ambiental" role="menuitem">
+                    <i class="bi bi-graph-up" aria-hidden="true"></i>
                     <span>Impacto Ambiental</span>
                 </a>
             </li>
-            <li>
-                <a href="./paginas/solucoes.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Soluções Sustentáveis">
-                    <i class="bi bi-lightbulb"></i>
+            <li role="none">
+                <a href="./paginas/solucoes.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Soluções Sustentáveis" role="menuitem">
+                    <i class="bi bi-lightbulb" aria-hidden="true"></i>
                     <span>Soluções Sustentáveis</span>
                 </a>
             </li>
-            <li>
-                <a href="./paginas/referencias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Referências">
-                    <i class="bi bi-book"></i>
+            <li role="none">
+                <a href="./paginas/referencias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Referências" role="menuitem">
+                    <i class="bi bi-book" aria-hidden="true"></i>
                     <span>Referências</span>
                 </a>
             </li>
@@ -79,15 +79,15 @@
     </nav>
 
     <!-- Sidebar Overlay -->
-    <div class="sidebar-overlay"></div>
+    <div class="sidebar-overlay" aria-hidden="true"></div>
 
     <!-- Main Content -->
-    <main id="content">
+    <main id="content" role="main">
         <!-- Header -->
-        <header>
+        <header role="banner">
             <div class="container">
-                <button class="menu-toggle d-md-none">
-                    <i class="bi bi-list"></i>
+                <button class="menu-toggle d-md-none" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+                    <i class="bi bi-list" aria-hidden="true"></i>
                 </button>
                 <h1>Tecnologia e Sustentabilidade</h1>
                 <p>Um estudo sobre a integração entre inovação tecnológica e preservação ambiental</p>
@@ -96,16 +96,16 @@
         </header>
 
         <!-- Introdução Section -->
-        <section id="introducao">
-            <h2>Introdução</h2>
+        <section id="introducao" aria-labelledby="introducao-heading">
+            <h2 id="introducao-heading">Introdução</h2>
             <div class="row">
                 <div class="col-lg-8">
                     <p>Este projeto acadêmico explora a relação entre tecnologia e sustentabilidade ambiental, analisando como as inovações tecnológicas podem contribuir para a preservação do meio ambiente e o desenvolvimento sustentável.</p>
                     <p>Através de uma abordagem interdisciplinar, investigamos as principais tecnologias verdes, seu impacto ambiental e as soluções sustentáveis que podem ser implementadas em diferentes contextos.</p>
                 </div>
                 <div class="col-lg-4">
-                    <div class="feature-card">
-                        <i class="bi bi-book"></i>
+                    <div class="feature-card" tabindex="0">
+                        <i class="bi bi-book" aria-hidden="true"></i>
                         <h3>Objetivos do Projeto</h3>
                         <ul class="list-unstyled">
                             <li>• Analisar tecnologias sustentáveis</li>
@@ -119,26 +119,26 @@
         </section>
 
         <!-- Tecnologias Section -->
-        <section id="tecnologias">
-            <h2>Tecnologias Verdes</h2>
+        <section id="tecnologias" aria-labelledby="tecnologias-heading">
+            <h2 id="tecnologias-heading">Tecnologias Verdes</h2>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="feature-card">
-                        <i class="bi bi-sun"></i>
+                    <div class="feature-card" tabindex="0">
+                        <i class="bi bi-sun" aria-hidden="true"></i>
                         <h3>Energias Renováveis</h3>
                         <p>Análise das principais fontes de energia limpa e seu potencial para redução de emissões.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="feature-card">
-                        <i class="bi bi-recycle"></i>
+                    <div class="feature-card" tabindex="0">
+                        <i class="bi bi-recycle" aria-hidden="true"></i>
                         <h3>Reciclagem Tecnológica</h3>
                         <p>Inovações no processo de reciclagem e gestão de resíduos eletrônicos.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="feature-card">
-                        <i class="bi bi-water"></i>
+                    <div class="feature-card" tabindex="0">
+                        <i class="bi bi-water" aria-hidden="true"></i>
                         <h3>Gestão Hídrica</h3>
                         <p>Tecnologias para monitoramento e preservação dos recursos hídricos.</p>
                     </div>
@@ -175,19 +175,19 @@
         </section>
 
         <!-- Metodologia Section -->
-        <section id="metodologia">
-            <h2>Metodologia</h2>
+        <section id="metodologia" aria-labelledby="metodologia-heading">
+            <h2 id="metodologia-heading">Metodologia</h2>
             <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="feature-card">
-                        <i class="bi bi-clipboard-data"></i>
+                    <div class="feature-card" tabindex="0">
+                        <i class="bi bi-clipboard-data" aria-hidden="true"></i>
                         <h3>Pesquisa</h3>
                         <p>Revisão bibliográfica e análise de dados sobre tecnologias sustentáveis.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="feature-card">
-                        <i class="bi bi-graph-up-arrow"></i>
+                    <div class="feature-card" tabindex="0">
+                        <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
                         <h3>Análise</h3>
                         <p>Avaliação do impacto ambiental e eficiência das tecnologias estudadas.</p>
                     </div>
@@ -196,12 +196,12 @@
         </section>
 
         <!-- Referências Section -->
-        <section id="referencias">
-            <h2>Referências</h2>
+        <section id="referencias" aria-labelledby="referencias-heading">
+            <h2 id="referencias-heading">Referências</h2>
             <div class="row">
                 <div class="col-12">
-                    <div class="feature-card">
-                        <i class="bi bi-book"></i>
+                    <div class="feature-card" tabindex="0">
+                        <i class="bi bi-book" aria-hidden="true"></i>
                         <h3>Bibliografia</h3>
                         <ul class="list-unstyled">
                             <li>• SILVA, J. A. Tecnologias Verdes: Inovação e Sustentabilidade. 2023</li>

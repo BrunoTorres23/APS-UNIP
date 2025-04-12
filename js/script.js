@@ -155,20 +155,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
 
     function toggleMenu() {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
         sidebar.classList.toggle('active');
         sidebarOverlay.classList.toggle('active');
         menuToggle.classList.toggle('active');
         content.classList.toggle('sidebar-active');
         body.classList.toggle('menu-open');
+
+        // Set focus to the first menu item when opening
+        if (!isExpanded) {
+            setTimeout(() => {
+                const firstMenuItem = sidebar.querySelector('.sidebar-nav a');
+                if (firstMenuItem) {
+                    firstMenuItem.focus();
+                }
+            }, 100);
+        }
     }
 
     function closeMenu() {
         if (sidebar.classList.contains('active')) {
+            menuToggle.setAttribute('aria-expanded', 'false');
             sidebar.classList.remove('active');
             sidebarOverlay.classList.remove('active');
             menuToggle.classList.remove('active');
             content.classList.remove('sidebar-active');
             body.classList.remove('menu-open');
+
+            // Return focus to the menu toggle button
+            menuToggle.focus();
         }
     }
 
@@ -258,6 +274,22 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth > 768) {
         const cards = document.querySelectorAll('.feature-card, .impact-card, .solution-card, .reference-card, .data-card, .case-card, .implementation-card, .additional-card');
         cards.forEach(card => {
+            // Add ARIA attributes to cards
+            if (!card.hasAttribute('role')) {
+                card.setAttribute('role', 'region');
+            }
+
+            // If card has a heading, associate it with the card
+            const cardHeading = card.querySelector('h3');
+            if (cardHeading && !card.hasAttribute('aria-labelledby') && cardHeading.id) {
+                card.setAttribute('aria-labelledby', cardHeading.id);
+            } else if (cardHeading && !cardHeading.id) {
+                // Generate an ID if the heading doesn't have one
+                const headingId = 'heading-' + Math.random().toString(36).substr(2, 9);
+                cardHeading.id = headingId;
+                card.setAttribute('aria-labelledby', headingId);
+            }
+
             // Mouse events only for desktop
             card.addEventListener('mouseenter', () => {
                 card.classList.add('card-hover');
@@ -265,6 +297,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
             card.addEventListener('mouseleave', () => {
                 card.classList.remove('card-hover');
+            });
+
+            // Keyboard interaction
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.classList.add('card-hover');
+                    // Simulate click if the card has a link
+                    const cardLink = card.querySelector('a');
+                    if (cardLink) {
+                        cardLink.click();
+                    }
+                }
+            });
+
+            card.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    card.classList.remove('card-hover');
+                }
             });
         });
     }
@@ -279,6 +330,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Adicionar classe inicial para garantir que os elementos comecem invisíveis
         fadeElements.forEach(element => {
             element.classList.add('fade-initial');
+            // Add aria-hidden until the element is visible
+            element.setAttribute('aria-hidden', 'true');
         });
 
         const observer = new IntersectionObserver((entries) => {
@@ -288,6 +341,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     setTimeout(() => {
                         entry.target.classList.add('fade-in');
                         entry.target.classList.remove('fade-initial');
+                        // Remove aria-hidden when element becomes visible
+                        entry.target.removeAttribute('aria-hidden');
                     }, 50);
                     observer.unobserve(entry.target);
                 }
