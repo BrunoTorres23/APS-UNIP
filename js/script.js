@@ -43,14 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loadingIndicator.classList.remove('active');
     });
 
-    // Initialize tooltips
-    if(document.querySelectorAll('[data-bs-toggle="tooltip"]')){
-           var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-    }
- 
+    // Removido o código do efeito parallax do header
 
     // Menu Toggle Functionality
     const menuToggle = document.querySelector('.menu-toggle');
@@ -88,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault();
                 const href = link.getAttribute('href');
                 closeMenu();
-                
+
                 // Small delay to allow menu to close before navigation
                 setTimeout(() => {
                     window.location.href = href;
@@ -124,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const link = target.closest('.sidebar-nav a');
                 const href = link.getAttribute('href');
                 closeMenu();
-                
+
                 // Small delay to allow menu to close before navigation
                 setTimeout(() => {
                     window.location.href = href;
@@ -133,15 +126,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, { passive: false });
 
-    // Smooth scrolling with offset for fixed header
+    // Smooth scrolling (header is no longer fixed)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const headerOffset = 80;
                 const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                const offsetPosition = elementPosition + window.pageYOffset;
 
                 window.scrollTo({
                     top: offsetPosition,
@@ -204,24 +196,10 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-    // Optimized parallax effect
-    let ticking = false;
-    window.addEventListener('scroll', function() {
-        if (!ticking) {
-            window.requestAnimationFrame(function() {
-                const header = document.querySelector('header');
-                const scrolled = window.pageYOffset;
-                header.style.transform = `translateY(${scrolled * 1}px)`;
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
-
     // Touch event handling for better mobile experience
     document.addEventListener('touchmove', function(e) {
         if (e.target.closest('.sidebar') && window.innerWidth <= 768) {
             e.preventDefault();
         }
     }, { passive: false });
-}); 
+});
