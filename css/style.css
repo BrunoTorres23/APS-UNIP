@@ -1,3 +1,13 @@
+/*
+ * Tecnologia e Sustentabilidade - Estilos
+ *
+ * Implementação de lazy loading para imagens:
+ * 1. Imagens com tag <img> usam o atributo loading="lazy" nativo
+ * 2. Imagens de fundo usam a classe .lazy-background com CSS vars
+ * 3. Animação de placeholder durante o carregamento
+ * 4. Transições suaves quando as imagens são carregadas
+ */
+
 /* Variables */
 :root {
     /* Light Theme */
@@ -30,8 +40,8 @@
     --secondary-hover: #247A84;
     --accent-color: #1B4B82;
     --accent-hover: #153A6A;
-    --text-color: #E8F4F8;
-    --text-secondary: #B0BEC5;
+    --text-color: #FFFFFF;
+    --text-secondary: #CCCCCC;
     --light-bg: #1a1a1a;
     --dark-bg: #121212;
     --border-color: #2C3E50;
@@ -170,6 +180,7 @@
 
 [data-theme="dark"] .bg-wrapper {
     opacity: 0.05;
+    background-color: var(--dark-bg);
 }
 
 [data-theme="dark"] section {
@@ -227,13 +238,30 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: url('../../images/direito-e-sustentabilidade.jpg') no-repeat center center fixed;
+    opacity: 0.08;
+    pointer-events: none;
+    background-color: var(--light-bg);
+}
+
+.bg-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-image) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    opacity: 0.08;
-    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.bg-wrapper.visible::after {
+    opacity: 1;
 }
 
 * {
@@ -294,15 +322,24 @@ header h1 {
     right: -40px;
     animation: float 3s ease-in-out infinite;
 }
+
+@media (max-width: 768px) {
+    .logo {
+        width: 60px;
+        height: 60px;
+        right: 10px;
+        top: 10px;
+    }
+}
 @keyframes float {
     0% {
-        transform:rotate(0deg);
+        transform: rotate(0deg) translateY(0);
     }
     50% {
-        transform: rotate(30deg);
+        transform: rotate(10deg) translateY(-5px);
     }
     100% {
-        transform: rotate(0deg);
+        transform: rotate(0deg) translateY(0);
     }
 }
 header p {
@@ -856,6 +893,11 @@ section h2::after {
     .solution-card i,
     .reference-card i {
         font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        margin-bottom: 1rem;
     }
 
     /* Animations */
@@ -986,6 +1028,12 @@ section h2::after {
 }
 
 /* Animations */
+/* Classe inicial para elementos com fade-in */
+.fade-initial {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -1019,14 +1067,17 @@ section h2::after {
 
 .fade-in {
     animation: fadeIn 0.6s ease-out forwards;
+    will-change: opacity, transform;
 }
 
 .slide-in {
     animation: slideIn 0.5s ease-out forwards;
+    will-change: transform;
 }
 
 .scale-in {
     animation: scaleIn 0.4s ease-out forwards;
+    will-change: transform, opacity;
 }
 
 /* Loading Animation */
@@ -1117,10 +1168,25 @@ section h2::after {
 .feature-card:hover,
 .impact-card:hover,
 .solution-card:hover,
-.reference-card:hover {
+.reference-card:hover,
+.feature-card.card-hover,
+.impact-card.card-hover,
+.solution-card.card-hover,
+.reference-card.card-hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
     border-color: var(--accent-color);
+}
+
+/* Desativar animações de hover em dispositivos móveis */
+@media (max-width: 768px) {
+    .feature-card:hover,
+    .impact-card:hover,
+    .solution-card:hover,
+    .reference-card:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm);
+    }
 }
 
 .feature-card i,
@@ -1130,7 +1196,10 @@ section h2::after {
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 1.5rem;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
     text-align: center;
     transition: var(--transition);
 }
@@ -1362,6 +1431,70 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Lazy Loading Styles */
+img.lazy {
+    opacity: 0;
+}
+
+img.lazy.loaded {
+    opacity: 1;
+}
+
+.lazy-background {
+    background-image: none !important;
+    background-color: var(--light-bg);
+    transition: background-image 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    position: relative;
+}
+
+[data-theme="dark"] .lazy-background {
+    background-color: var(--dark-bg);
+}
+
+.lazy-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s ease-in-out infinite;
+    z-index: 0;
+    opacity: 0.7;
+    will-change: background-position;
+    transform: translateZ(0);
+}
+
+[data-theme="dark"] .lazy-background::before {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    opacity: 0.5;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Desativar animação em dispositivos com prefer-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .lazy-background::before {
+        animation: none;
+        opacity: 0.3;
+    }
+}
+
+.lazy-background.visible {
+    background-image: var(--bg-image) !important;
+    background-color: transparent;
+}
+
+.lazy-background.visible::before {
+    display: none;
 }
 
 .feature-card, .impact-card, .solution-card {
@@ -1436,6 +1569,20 @@ img {
 
 .theme-toggle:hover i {
     transform: rotate(180deg);
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    .theme-toggle {
+        bottom: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .theme-toggle i {
+        font-size: 1.2rem;
+    }
 }
 
 /* Loading Indicator */

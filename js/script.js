@@ -1,4 +1,106 @@
+/**
+ * Tecnologia e Sustentabilidade - Scripts
+ *
+ * Implementação de lazy loading para imagens:
+ * - Usa Intersection Observer para detectar quando elementos entram na viewport
+ * - Suporta imagens com tag <img> e imagens de fundo via CSS
+ * - Pré-carrega imagens críticas para melhorar a experiência inicial
+ * - Inclui fallback para navegadores que não suportam Intersection Observer
+ */
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Lazy Loading Utility
+    function lazyLoadImages() {
+        // Lazy load for regular images
+        const lazyImages = document.querySelectorAll('img[loading="lazy"], img[data-src]');
+
+        // Lazy load for background images
+        const lazyBackgrounds = document.querySelectorAll('.lazy-background');
+
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.tagName.toLowerCase() === 'img') {
+                            // Handle <img> elements
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                if (img.dataset.srcset) {
+                                    img.srcset = img.dataset.srcset;
+                                }
+                            }
+                            img.classList.add('loaded');
+                            imageObserver.unobserve(img);
+                        } else {
+                            // Handle background images
+                            img.classList.add('visible');
+                            imageObserver.unobserve(img);
+                        }
+                    }
+                });
+            }, {
+                rootMargin: '50px 0px',
+                threshold: 0.01
+            });
+
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+
+            lazyBackgrounds.forEach(bg => {
+                imageObserver.observe(bg);
+            });
+        } else {
+            // Fallback for browsers without IntersectionObserver support
+            lazyImages.forEach(img => {
+                img.src = img.dataset.src;
+                if (img.dataset.srcset) {
+                    img.srcset = img.dataset.srcset;
+                }
+                img.classList.add('loaded');
+            });
+
+            lazyBackgrounds.forEach(bg => {
+                bg.classList.add('visible');
+            });
+        }
+    }
+
+    // Initialize lazy loading
+    lazyLoadImages();
+
+    // Re-check for new lazy load elements after DOM changes
+    const mutationObserver = new MutationObserver(() => {
+        lazyLoadImages();
+    });
+
+    mutationObserver.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+    // Preload critical images
+    function preloadCriticalImages() {
+        // Preload the background image for above-the-fold content
+        const bgImage = new Image();
+
+        // Determine correct path based on current page location
+        const isSubpage = window.location.pathname.includes('/paginas/');
+        bgImage.src = isSubpage ? '../images/direito-e-sustentabilidade.jpg' : 'images/direito-e-sustentabilidade.jpg';
+
+        // When the image is loaded, apply it to the background wrapper
+        bgImage.onload = function() {
+            const bgWrappers = document.querySelectorAll('.bg-wrapper.lazy-background');
+            bgWrappers.forEach(wrapper => {
+                wrapper.classList.add('visible');
+            });
+        };
+    }
+
+    // Call preload function after a short delay to prioritize critical resources
+    setTimeout(preloadCriticalImages, 100);
+
     // Theme Management
     const themeToggle = document.createElement('button');
     themeToggle.className = 'theme-toggle';
@@ -152,49 +254,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Enhanced card animations with touch support
-    const cards = document.querySelectorAll('.feature-card, .impact-card, .solution-card, .reference-card, .data-card, .case-card, .implementation-card, .additional-card');
-    cards.forEach(card => {
-        // Touch events
-        card.addEventListener('touchstart', () => {
-            card.style.transform = 'translateY(-5px)';
-            card.style.boxShadow = 'var(--shadow-lg)';
-        });
+    // Enhanced card animations with touch support - only for non-mobile devices
+    if (window.innerWidth > 768) {
+        const cards = document.querySelectorAll('.feature-card, .impact-card, .solution-card, .reference-card, .data-card, .case-card, .implementation-card, .additional-card');
+        cards.forEach(card => {
+            // Mouse events only for desktop
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('card-hover');
+            });
 
-        card.addEventListener('touchend', () => {
-            card.style.transform = 'translateY(0)';
-            card.style.boxShadow = 'var(--shadow-sm)';
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('card-hover');
+            });
         });
-
-        // Mouse events
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-5px)';
-            card.style.boxShadow = 'var(--shadow-lg)';
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-            card.style.boxShadow = 'var(--shadow-sm)';
-        });
-    });
+    }
 
     // Intersection Observer for fade-in animations
-    const fadeElements = document.querySelectorAll('.feature-card, .impact-card, .solution-card, .reference-card, .data-card, .case-card, .implementation-card, .additional-card');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
+    // Verificar se o navegador suporta prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    fadeElements.forEach(element => {
-        observer.observe(element);
-    });
+    if (!prefersReducedMotion) {
+        const fadeElements = document.querySelectorAll('.feature-card, .impact-card, .solution-card, .reference-card, .data-card, .case-card, .implementation-card, .additional-card');
+
+        // Adicionar classe inicial para garantir que os elementos comecem invisíveis
+        fadeElements.forEach(element => {
+            element.classList.add('fade-initial');
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Pequeno atraso para melhorar a performance
+                    setTimeout(() => {
+                        entry.target.classList.add('fade-in');
+                        entry.target.classList.remove('fade-initial');
+                    }, 50);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
 
     // Touch event handling for better mobile experience
     document.addEventListener('touchmove', function(e) {
