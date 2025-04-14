@@ -181,12 +181,17 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('../service-worker.js')
+          // Determine correct path for service worker
+          const swPath = location.pathname.includes('/paginas/') ? '../service-worker.js' : './service-worker.js';
+
+          navigator.serviceWorker.register(swPath)
             .then(registration => {
               console.log('Service Worker registered with scope:', registration.scope);
             })
             .catch(error => {
               console.error('Service Worker registration failed:', error);
+              // Fallback - site will still work without service worker
+              console.log('Site will continue to function without offline capabilities');
             });
         });
       }

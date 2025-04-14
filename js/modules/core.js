@@ -7,17 +7,48 @@ export const features = {
   supportsIntersectionObserver: 'IntersectionObserver' in window,
   supportsModules: 'noModule' in document.createElement('script'),
   prefersReducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-  isMobile: window.innerWidth <= 768
+  isMobile: checkIfMobile()
 };
+
+// Better mobile detection
+function checkIfMobile() {
+  // Check for touch capability and screen size
+  const hasTouchScreen = (
+    ('ontouchstart' in window) ||
+    (navigator.maxTouchPoints > 0) ||
+    (navigator.msMaxTouchPoints > 0)
+  );
+
+  // Consider both touch capability and screen width
+  return hasTouchScreen && window.innerWidth <= 768;
+}
+
+// Update mobile detection on resize
+window.addEventListener('resize', () => {
+  features.isMobile = checkIfMobile();
+});
 
 // Utility functions
 export function isSubpage() {
-  return window.location.pathname.includes('/paginas/');
+  // Check for both Unix-style and Windows-style paths
+  return window.location.pathname.includes('/paginas/') ||
+         window.location.pathname.includes('\\paginas\\') ||
+         window.location.pathname.includes('/paginas') ||
+         window.location.pathname.includes('\\paginas');
 }
 
 // Get current page
 export function getCurrentPage() {
-  return window.location.pathname.split('/').pop() || 'index.html';
+  // Handle both Unix and Windows path separators
+  const path = window.location.pathname;
+  const unixPath = path.split('/').pop();
+  const winPath = path.split('\\').pop();
+
+  // Use whichever path component is valid
+  const pageName = unixPath || winPath || 'index.html';
+
+  // Remove any query parameters or hash
+  return pageName.split('?')[0].split('#')[0];
 }
 
 // DOM ready helper
@@ -52,19 +83,28 @@ onDOMReady(() => {
 
   // Load non-critical modules asynchronously
   if (features.supportsModules) {
-    // Dynamic imports for modern browsers
-    import('./lazy-loading.js').then(module => module.initialize());
-    import('./theme.js').then(module => module.initialize());
-    
+    // Dynamic imports for modern browsers with error handling
+    import('./lazy-loading.js')
+      .then(module => module.initialize())
+      .catch(error => console.error('Failed to load lazy-loading module:', error));
+
+    import('./theme.js')
+      .then(module => module.initialize())
+      .catch(error => console.error('Failed to load theme module:', error));
+
     // Load page-specific modules based on current page
     const currentPage = getCurrentPage();
-    
+
     // Common UI elements for all pages
-    import('./ui.js').then(module => module.initialize());
-    
+    import('./ui.js')
+      .then(module => module.initialize())
+      .catch(error => console.error('Failed to load UI module:', error));
+
     // Load animation module if reduced motion is not preferred
     if (!features.prefersReducedMotion) {
-      import('./animations.js').then(module => module.initialize());
+      import('./animations.js')
+        .then(module => module.initialize())
+        .catch(error => console.error('Failed to load animations module:', error));
     }
   } else {
     // Fallback for browsers that don't support ES modules

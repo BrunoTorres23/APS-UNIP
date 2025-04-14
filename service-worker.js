@@ -7,17 +7,17 @@ const CACHE_NAME = 'tecnologia-sustentabilidade-v1';
 
 // Assets to cache on install
 const PRECACHE_ASSETS = [
-  '/',
-  '/index.html',
-  '/css/style.css',
-  '/js/main.js',
-  '/js/modules/core.js',
-  '/js/bundle.js',
-  '/images/direito-e-sustentabilidade.jpg',
-  '/site.webmanifest',
-  '/images/favicon-16x16.png',
-  '/images/favicon-32x32.png',
-  '/images/apple-touch-icon.png'
+  './',
+  './index.html',
+  './css/style.css',
+  './js/main.js',
+  './js/modules/core.js',
+  './js/bundle.js',
+  './images/direito-e-sustentabilidade.jpg',
+  './site.webmanifest',
+  './images/favicon-16x16.png',
+  './images/favicon-32x32.png',
+  './images/apple-touch-icon.png'
 ];
 
 // Install event - precache assets
@@ -77,7 +77,7 @@ self.addEventListener('fetch', event => {
               return cachedResponse;
             }
             // If not in cache, return the offline page
-            return caches.match('/index.html');
+            return caches.match('./index.html');
           });
         })
     );
@@ -91,7 +91,7 @@ self.addEventListener('fetch', event => {
         if (cachedResponse) {
           return cachedResponse;
         }
-        
+
         // If not in cache, fetch from network
         return fetch(event.request).then(response => {
           // Cache the response for future
@@ -99,9 +99,26 @@ self.addEventListener('fetch', event => {
             const responseClone = response.clone();
             caches.open(CACHE_NAME).then(cache => {
               cache.put(event.request, responseClone);
+            }).catch(err => {
+              console.error('Failed to cache response:', err);
+              // Continue even if caching fails
             });
           }
           return response;
+        }).catch(err => {
+          console.error('Network fetch failed:', err);
+          // For JS or CSS files, try to return a fallback
+          const url = new URL(event.request.url);
+          const extension = url.pathname.split('.').pop();
+
+          if (extension === 'js') {
+            return caches.match('./js/bundle.js');
+          } else if (extension === 'css') {
+            return caches.match('./css/style.css');
+          }
+
+          // Otherwise just fail
+          throw err;
         });
       })
   );
