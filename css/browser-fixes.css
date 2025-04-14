@@ -1,0 +1,152 @@
+/**
+ * Browser-specific CSS fixes
+ * This file contains CSS fixes for specific browsers
+ */
+
+/* Internet Explorer 11 fixes */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* Fix for flexbox in IE11 */
+  .sidebar-nav {
+    display: block;
+  }
+  
+  .sidebar-nav li {
+    margin-bottom: 10px;
+  }
+  
+  /* Fix for CSS Grid in IE11 */
+  .grid-container {
+    display: block;
+  }
+  
+  .grid-item {
+    display: inline-block;
+    width: calc(33.333% - 20px);
+    margin: 10px;
+    vertical-align: top;
+  }
+  
+  /* Fix for CSS variables in IE11 */
+  body {
+    /* Fallback colors for IE11 */
+    color: #2C3E50;
+    background-color: #ffffff;
+  }
+  
+  .sidebar {
+    background-color: #1B4B82;
+  }
+  
+  header {
+    background: linear-gradient(135deg, #1B4B82, #4A90E2);
+  }
+  
+  /* Fix for object-fit in IE11 */
+  .card-image img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+/* Edge Legacy fixes */
+@supports (-ms-ime-align: auto) {
+  /* Fix for sticky positioning in Edge */
+  .sidebar {
+    position: fixed;
+  }
+}
+
+/* Safari fixes */
+@supports (-webkit-overflow-scrolling: touch) {
+  /* Fix for momentum scrolling on iOS */
+  .sidebar-nav {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Fix for iOS input styling */
+  input, textarea {
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+}
+
+/* Firefox fixes */
+@-moz-document url-prefix() {
+  /* Fix for scrollbar width in Firefox */
+  .sidebar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+}
+
+/* Chrome/Safari fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Fix for smooth scrolling in Chrome/Safari */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Mobile browser fixes */
+@media (max-width: 768px) {
+  /* Fix for 100vh issue on mobile browsers */
+  .full-height {
+    height: 100%;
+    min-height: 100vh;
+    /* Fix for iOS Safari */
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Fix for fixed positioning on mobile */
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    /* Fix for iOS Safari */
+    height: -webkit-fill-available;
+  }
+}
+
+/* High contrast mode fixes */
+@media (forced-colors: active) {
+  /* Ensure buttons have visible borders in high contrast mode */
+  button, .btn {
+    border: 1px solid transparent;
+  }
+  
+  /* Ensure links are underlined in high contrast mode */
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* Print mode fixes */
+@media print {
+  /* Hide elements that shouldn't be printed */
+  .sidebar, .theme-toggle, .loading-indicator {
+    display: none !important;
+  }
+  
+  /* Ensure text is black on white for printing */
+  body {
+    color: #000 !important;
+    background: #fff !important;
+  }
+  
+  /* Expand all content for printing */
+  #content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Add URL after links for better context in printed pages */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+  
+  /* Don't add URL after internal links or JavaScript links */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+}

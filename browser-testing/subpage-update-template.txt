@@ -1,0 +1,8 @@
+<!-- Add this after the main CSS link -->
+    <!-- Browser-specific fixes -->
+    <link rel="stylesheet" href="../css/browser-fixes.css" media="all">
+
+<!-- Add this at the end of the body, before the closing </body> tag -->
+    <!-- Browser Compatibility Testing -->
+    <script src="../js/browser-compatibility.js" defer></script>
+    <script src="../browser-testing/manual-test.js" defer></script>
