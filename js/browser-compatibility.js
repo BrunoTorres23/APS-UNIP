@@ -5,20 +5,20 @@
 
 (function() {
   // Only run in development mode or when testing flag is present
-  const isTestMode = window.location.search.includes('browser-test') || 
+  const isTestMode = window.location.search.includes('browser-test') ||
                      localStorage.getItem('browser-test-mode') === 'true';
-  
+
   if (!isTestMode) return;
-  
+
   // Create test UI
   createTestUI();
-  
+
   // Run browser feature detection
   const testResults = runFeatureTests();
-  
+
   // Display results
   displayResults(testResults);
-  
+
   /**
    * Creates the test UI panel
    */
@@ -46,29 +46,29 @@
         </div>
       </div>
     `;
-    
+
     document.body.appendChild(panel);
-    
+
     // Add event listeners
     panel.querySelector('.test-panel-close').addEventListener('click', () => {
       panel.classList.toggle('minimized');
     });
-    
+
     panel.querySelector('#run-all-tests').addEventListener('click', () => {
       const results = runFeatureTests();
       displayResults(results);
     });
-    
+
     panel.querySelector('#export-results').addEventListener('click', () => {
       exportResults(testResults);
     });
-    
+
     panel.querySelector('#exit-test-mode').addEventListener('click', () => {
       localStorage.removeItem('browser-test-mode');
       panel.remove();
       location.href = location.pathname; // Reload without query params
     });
-    
+
     // Add styles
     const style = document.createElement('style');
     style.textContent = `
@@ -87,12 +87,12 @@
         transition: all 0.3s ease;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
-      
+
       .browser-test-panel.minimized {
         height: 40px;
         overflow: hidden;
       }
-      
+
       .test-panel-header {
         display: flex;
         justify-content: space-between;
@@ -101,12 +101,12 @@
         background: #f5f5f5;
         border-bottom: 1px solid #eee;
       }
-      
+
       .test-panel-header h3 {
         margin: 0;
         font-size: 16px;
       }
-      
+
       .test-panel-close {
         background: none;
         border: none;
@@ -114,43 +114,43 @@
         cursor: pointer;
         color: #666;
       }
-      
+
       .test-panel-content {
         padding: 12px;
         overflow-y: auto;
         max-height: 440px;
       }
-      
+
       .browser-info {
         margin-bottom: 15px;
         padding-bottom: 10px;
         border-bottom: 1px solid #eee;
       }
-      
+
       .test-results {
         margin-bottom: 15px;
       }
-      
+
       .feature-test {
         margin-bottom: 8px;
         padding: 8px;
         border-radius: 4px;
       }
-      
+
       .feature-test.pass {
         background-color: #e6f4ea;
       }
-      
+
       .feature-test.fail {
         background-color: #fce8e6;
       }
-      
+
       .test-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
       }
-      
+
       .test-button {
         padding: 8px 12px;
         background: #1B4B82;
@@ -159,11 +159,11 @@
         border-radius: 4px;
         cursor: pointer;
       }
-      
+
       .test-button:hover {
         background: #153A6A;
       }
-      
+
       @media (max-width: 600px) {
         .browser-test-panel {
           width: calc(100% - 40px);
@@ -173,10 +173,10 @@
         }
       }
     `;
-    
+
     document.head.appendChild(style);
   }
-  
+
   /**
    * Runs all feature tests
    * @returns {Object} Test results
@@ -192,41 +192,41 @@
         es6Modules: testES6Modules(),
         serviceWorker: 'serviceWorker' in navigator,
         webStorage: testWebStorage(),
-        
+
         // DOM APIs
         intersectionObserver: 'IntersectionObserver' in window,
         mutationObserver: 'MutationObserver' in window,
         resizeObserver: 'ResizeObserver' in window,
-        
+
         // CSS Features
         cssGrid: testCSSGrid(),
         cssFlexbox: testCSSFlexbox(),
         cssVariables: testCSSVariables(),
-        
+
         // Media Features
         webpSupport: testWebPSupport(),
         lazyLoading: 'loading' in HTMLImageElement.prototype,
-        
+
         // Input Features
         touchEvents: 'ontouchstart' in window,
         pointerEvents: 'PointerEvent' in window,
-        
+
         // Performance APIs
         requestAnimationFrame: 'requestAnimationFrame' in window,
         requestIdleCallback: 'requestIdleCallback' in window,
-        
+
         // Misc
         webComponents: 'customElements' in window,
         webGL: testWebGL()
       }
     };
-    
+
     // Log results to console for debugging
     console.log('Browser Compatibility Test Results:', results);
-    
+
     return results;
   }
-  
+
   /**
    * Displays test results in the UI
    * @param {Object} results Test results
@@ -234,20 +234,20 @@
   function displayResults(results) {
     const container = document.getElementById('feature-test-results');
     container.innerHTML = '';
-    
+
     for (const [feature, supported] of Object.entries(results.features)) {
       const el = document.createElement('div');
       el.className = `feature-test ${supported ? 'pass' : 'fail'}`;
       el.innerHTML = `
         <div class="feature-name">
-          <strong>${formatFeatureName(feature)}:</strong> 
+          <strong>${formatFeatureName(feature)}:</strong>
           ${supported ? '✅ Supported' : '❌ Not Supported'}
         </div>
       `;
       container.appendChild(el);
     }
   }
-  
+
   /**
    * Exports test results as JSON file
    * @param {Object} results Test results
@@ -255,15 +255,15 @@
   function exportResults(results) {
     const dataStr = JSON.stringify(results, null, 2);
     const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-    
+
     const exportFileDefaultName = `browser-test-${results.browser.name}-${results.browser.version}-${new Date().toISOString().split('T')[0]}.json`;
-    
+
     const linkElement = document.createElement('a');
     linkElement.setAttribute('href', dataUri);
     linkElement.setAttribute('download', exportFileDefaultName);
     linkElement.click();
   }
-  
+
   /**
    * Gets browser information
    * @returns {Object} Browser name and version
@@ -274,53 +274,65 @@
       name: 'Unknown',
       version: 'Unknown'
     };
-    
-    // Chrome
-    if (userAgent.indexOf('Chrome') > -1 && userAgent.indexOf('Edg') === -1 && userAgent.indexOf('OPR') === -1) {
-      browser.name = 'Chrome';
-      browser.version = userAgent.match(/Chrome\/([0-9.]+)/)[1];
+
+    try {
+      // Chrome
+      if (userAgent.indexOf('Chrome') > -1 && userAgent.indexOf('Edg') === -1 && userAgent.indexOf('OPR') === -1) {
+        browser.name = 'Chrome';
+        const match = userAgent.match(/Chrome\/([0-9.]+)/);
+        if (match && match[1]) browser.version = match[1];
+      }
+      // Firefox
+      else if (userAgent.indexOf('Firefox') > -1) {
+        browser.name = 'Firefox';
+        const match = userAgent.match(/Firefox\/([0-9.]+)/);
+        if (match && match[1]) browser.version = match[1];
+      }
+      // Safari
+      else if (userAgent.indexOf('Safari') > -1 && userAgent.indexOf('Chrome') === -1) {
+        browser.name = 'Safari';
+        const match = userAgent.match(/Version\/([0-9.]+)/);
+        if (match && match[1]) browser.version = match[1];
+      }
+      // Edge
+      else if (userAgent.indexOf('Edg') > -1) {
+        browser.name = 'Edge';
+        const match = userAgent.match(/Edg\/([0-9.]+)/);
+        if (match && match[1]) browser.version = match[1];
+      }
+      // IE
+      else if (userAgent.indexOf('Trident') > -1) {
+        browser.name = 'Internet Explorer';
+        const match = userAgent.match(/rv:([0-9.]+)/);
+        if (match && match[1]) browser.version = match[1];
+      }
+      // Opera
+      else if (userAgent.indexOf('OPR') > -1) {
+        browser.name = 'Opera';
+        const match = userAgent.match(/OPR\/([0-9.]+)/);
+        if (match && match[1]) browser.version = match[1];
+      }
+      // Samsung Internet
+      else if (userAgent.indexOf('SamsungBrowser') > -1) {
+        browser.name = 'Samsung Internet';
+        const match = userAgent.match(/SamsungBrowser\/([0-9.]+)/);
+        if (match && match[1]) browser.version = match[1];
+      }
+    } catch (e) {
+      console.error('Error detecting browser information:', e);
+      // Continue with default values
     }
-    // Firefox
-    else if (userAgent.indexOf('Firefox') > -1) {
-      browser.name = 'Firefox';
-      browser.version = userAgent.match(/Firefox\/([0-9.]+)/)[1];
-    }
-    // Safari
-    else if (userAgent.indexOf('Safari') > -1 && userAgent.indexOf('Chrome') === -1) {
-      browser.name = 'Safari';
-      browser.version = userAgent.match(/Version\/([0-9.]+)/)[1];
-    }
-    // Edge
-    else if (userAgent.indexOf('Edg') > -1) {
-      browser.name = 'Edge';
-      browser.version = userAgent.match(/Edg\/([0-9.]+)/)[1];
-    }
-    // IE
-    else if (userAgent.indexOf('Trident') > -1) {
-      browser.name = 'Internet Explorer';
-      browser.version = userAgent.match(/rv:([0-9.]+)/)[1];
-    }
-    // Opera
-    else if (userAgent.indexOf('OPR') > -1) {
-      browser.name = 'Opera';
-      browser.version = userAgent.match(/OPR\/([0-9.]+)/)[1];
-    }
-    // Samsung Internet
-    else if (userAgent.indexOf('SamsungBrowser') > -1) {
-      browser.name = 'Samsung Internet';
-      browser.version = userAgent.match(/SamsungBrowser\/([0-9.]+)/)[1];
-    }
-    
+
     return browser;
   }
-  
+
   /**
    * Gets platform information
    * @returns {String} Platform name
    */
   function getPlatformInfo() {
     const userAgent = navigator.userAgent;
-    
+
     if (/Windows/.test(userAgent)) {
       return 'Windows';
     } else if (/Macintosh/.test(userAgent)) {
@@ -335,7 +347,7 @@
       return 'Unknown';
     }
   }
-  
+
   /**
    * Formats feature name for display
    * @param {String} name Feature name in camelCase
@@ -346,7 +358,7 @@
       .replace(/([A-Z])/g, ' $1')
       .replace(/^./, str => str.toUpperCase());
   }
-  
+
   /**
    * Tests ES6 support
    * @returns {Boolean} Whether ES6 is supported
@@ -360,7 +372,7 @@
       return false;
     }
   }
-  
+
   /**
    * Tests ES6 modules support
    * @returns {Boolean} Whether ES6 modules are supported
@@ -368,7 +380,7 @@
   function testES6Modules() {
     return 'noModule' in document.createElement('script');
   }
-  
+
   /**
    * Tests web storage support
    * @returns {Boolean} Whether web storage is supported
@@ -382,44 +394,64 @@
       return false;
     }
   }
-  
+
   /**
    * Tests CSS Grid support
    * @returns {Boolean} Whether CSS Grid is supported
    */
   function testCSSGrid() {
-    return window.CSS && CSS.supports('display', 'grid');
+    try {
+      return window.CSS && CSS.supports('display', 'grid');
+    } catch (e) {
+      console.error('Error testing CSS Grid support:', e);
+      return false;
+    }
   }
-  
+
   /**
    * Tests CSS Flexbox support
    * @returns {Boolean} Whether CSS Flexbox is supported
    */
   function testCSSFlexbox() {
-    return window.CSS && CSS.supports('display', 'flex');
+    try {
+      return window.CSS && CSS.supports('display', 'flex');
+    } catch (e) {
+      console.error('Error testing CSS Flexbox support:', e);
+      return false;
+    }
   }
-  
+
   /**
    * Tests CSS Variables support
    * @returns {Boolean} Whether CSS Variables are supported
    */
   function testCSSVariables() {
-    return window.CSS && CSS.supports('--test', '0');
+    try {
+      return window.CSS && CSS.supports('--test', '0');
+    } catch (e) {
+      console.error('Error testing CSS Variables support:', e);
+      return false;
+    }
   }
-  
+
   /**
    * Tests WebP support
    * @returns {Boolean} Whether WebP is supported
    */
   function testWebPSupport() {
-    const canvas = document.createElement('canvas');
-    if (canvas.getContext && canvas.getContext('2d')) {
-      // Check if toDataURL returns a WebP data URL
-      return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+    try {
+      const canvas = document.createElement('canvas');
+      if (canvas.getContext && canvas.getContext('2d')) {
+        // Check if toDataURL returns a WebP data URL
+        return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+      }
+      return false;
+    } catch (e) {
+      console.error('Error testing WebP support:', e);
+      return false;
     }
-    return false;
   }
-  
+
   /**
    * Tests WebGL support
    * @returns {Boolean} Whether WebGL is supported
@@ -427,10 +459,11 @@
   function testWebGL() {
     try {
       const canvas = document.createElement('canvas');
-      return !!(window.WebGLRenderingContext && 
-                (canvas.getContext('webgl') || 
+      return !!(window.WebGLRenderingContext &&
+                (canvas.getContext('webgl') ||
                  canvas.getContext('experimental-webgl')));
     } catch (e) {
+      console.error('Error testing WebGL support:', e);
       return false;
     }
   }

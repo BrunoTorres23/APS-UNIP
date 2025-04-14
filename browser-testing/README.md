@@ -2,6 +2,16 @@
 
 This directory contains tools and documentation for cross-browser testing of the Tecnologia e Sustentabilidade project.
 
+## Verificação da Configuração
+
+Antes de começar os testes, verifique se a configuração está correta executando:
+
+```
+node browser-testing/verify-setup.js
+```
+
+Este script verificará se todos os arquivos e diretórios necessários existem e se a configuração está correta.
+
 ## Testing Setup
 
 ### Automated Feature Detection
