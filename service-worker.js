@@ -14,6 +14,10 @@ const PRECACHE_ASSETS = [
   './js/modules/core.js',
   './js/bundle.js',
   './images/direito-e-sustentabilidade.jpg',
+  './images/pexels-christian-fohrer-894172-2912103.jpg',
+  './images/pexels-pok-rie-33563-3829454.jpg',
+  './images/istockphoto-1400218353-612x612.jpg',
+  './images/istockphoto-1414916304-612x612.jpg',
   './site.webmanifest',
   './images/favicon-16x16.png',
   './images/favicon-32x32.png',
@@ -55,6 +59,29 @@ self.addEventListener('fetch', event => {
 
   // Skip non-GET requests
   if (event.request.method !== 'GET') {
+    return;
+  }
+
+  // Handle image requests specially
+  if (event.request.url.match(/\.(jpg|jpeg|png|gif|svg|webp)$/)) {
+    event.respondWith(
+      caches.match(event.request)
+        .then(cachedResponse => {
+          if (cachedResponse) {
+            return cachedResponse;
+          }
+          return fetch(event.request).then(response => {
+            // Cache the image for future use
+            if (response.status === 200) {
+              const responseClone = response.clone();
+              caches.open(CACHE_NAME).then(cache => {
+                cache.put(event.request, responseClone);
+              });
+            }
+            return response;
+          });
+        })
+    );
     return;
   }
 
