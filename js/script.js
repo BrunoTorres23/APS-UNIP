@@ -86,19 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const bgImage = new Image();
 
         // Determine correct path based on current page location
-        const isSubpage = window.location.pathname.includes('/paginas/') ||
-                         window.location.pathname.includes('\\paginas\\') ||
-                         window.location.pathname.includes('/paginas') ||
-                         window.location.pathname.includes('\\paginas');
-        bgImage.src = isSubpage ? '../images/pexels-christian-fohrer-894172-2912103.jpg' : 'images/pexels-christian-fohrer-894172-2912103.jpg';
-
-        // Preload logo image
-        const logoImage = new Image();
-        logoImage.src = isSubpage ? '../images/istockphoto-1400218353-612x612.jpg' : 'images/istockphoto-1400218353-612x612.jpg';
-
-        // Preload header background
-        const headerBgImage = new Image();
-        headerBgImage.src = isSubpage ? '../images/direito-e-sustentabilidade.jpg' : 'images/direito-e-sustentabilidade.jpg';
+        const isSubpage = window.location.pathname.includes('/paginas/');
+        bgImage.src = isSubpage ? '../images/direito-e-sustentabilidade.jpg' : 'images/direito-e-sustentabilidade.jpg';
 
         // When the image is loaded, apply it to the background wrapper
         bgImage.onload = function() {
@@ -107,60 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 wrapper.classList.add('visible');
             });
         };
-
-        // Set header background image when loaded
-        headerBgImage.onload = function() {
-            const header = document.querySelector('header');
-            if (header) {
-                header.style.setProperty('--header-bg-image', `url("${headerBgImage.src}")`);
-            }
-        };
-
-        // Set CSS variables for impact card backgrounds
-        const root = document.documentElement;
-        const basePath = isSubpage ? '../images/' : 'images/';
-
-        // Use try-catch to handle potential errors with setting CSS variables
-        try {
-            root.style.setProperty('--climate-bg-image', `url("${basePath}istockphoto-1414916304-612x612.jpg")`);
-            root.style.setProperty('--water-bg-image', `url("${basePath}direito-e-sustentabilidade.jpg")`);
-            root.style.setProperty('--waste-bg-image', `url("${basePath}pexels-pok-rie-33563-3829454.jpg")`);
-
-            // Also set the section background image variable
-            root.style.setProperty('--section-bg-image', `url("${basePath}pexels-pok-rie-33563-3829454.jpg")`);
-        } catch (error) {
-            console.error('Error setting CSS variables:', error);
-        }
-
     }
 
     // Call preload function after a short delay to prioritize critical resources
     setTimeout(preloadCriticalImages, 100);
-
-    // Add subtle animation to images on scroll
-    const animateImagesOnScroll = () => {
-        const cardImages = document.querySelectorAll('.card-image img');
-        const scrollY = window.scrollY;
-
-        cardImages.forEach(img => {
-            const parent = img.closest('.feature-card');
-            if (!parent) return;
-
-            const rect = parent.getBoundingClientRect();
-            const isInView = rect.top < window.innerHeight && rect.bottom > 0;
-
-            if (isInView) {
-                const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-                const scale = 1 + (scrollProgress * 0.05);
-                img.style.transform = `scale(${Math.min(scale, 1.05)})`;
-            }
-        });
-    };
-
-    // Only add scroll animation if user doesn't prefer reduced motion
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        window.addEventListener('scroll', animateImagesOnScroll, { passive: true });
-    }
 
     // Theme Management
     const themeToggle = document.createElement('button');
@@ -334,19 +273,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Enhanced card animations with touch support - only for non-mobile devices
     if (window.innerWidth > 768) {
         const cards = document.querySelectorAll('.feature-card, .impact-card, .solution-card, .reference-card, .data-card, .case-card, .implementation-card, .additional-card');
-
-        // Add hover effect for card images
-        document.querySelectorAll('.card-image').forEach(imageContainer => {
-            imageContainer.addEventListener('mouseenter', () => {
-                const img = imageContainer.querySelector('img');
-                if (img) img.style.transform = 'scale(1.05)';
-            });
-
-            imageContainer.addEventListener('mouseleave', () => {
-                const img = imageContainer.querySelector('img');
-                if (img) img.style.transform = 'scale(1)';
-            });
-        });
         cards.forEach(card => {
             // Add ARIA attributes to cards
             if (!card.hasAttribute('role')) {

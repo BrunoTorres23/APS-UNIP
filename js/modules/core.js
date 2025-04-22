@@ -95,16 +95,6 @@ onDOMReady(() => {
     // Load page-specific modules based on current page
     const currentPage = getCurrentPage();
 
-    // Load images module first (high priority)
-    import('./images.js')
-      .then(module => module.initialize())
-      .catch(error => console.error('Failed to load images module:', error));
-
-    // Load theme module (high priority)
-    import('./theme.js')
-      .then(module => module.initialize())
-      .catch(error => console.error('Failed to load theme module:', error));
-
     // Common UI elements for all pages
     import('./ui.js')
       .then(module => module.initialize())

@@ -64,49 +64,19 @@ function lazyLoadImages() {
 
 // Preload critical images
 function preloadCriticalImages() {
-  try {
-    // Preload the background image for above-the-fold content
-    const bgImage = new Image();
+  // Preload the background image for above-the-fold content
+  const bgImage = new Image();
 
-    // Determine correct path based on current page location
-    const isSubPage = isSubpage();
-    bgImage.src = isSubPage ? '../images/pexels-christian-fohrer-894172-2912103.jpg' : 'images/pexels-christian-fohrer-894172-2912103.jpg';
+  // Determine correct path based on current page location
+  bgImage.src = isSubpage() ? '../images/direito-e-sustentabilidade.jpg' : 'images/direito-e-sustentabilidade.jpg';
 
-    // Preload logo image
-    const logoImage = new Image();
-    logoImage.src = isSubPage ? '../images/istockphoto-1400218353-612x612.jpg' : 'images/istockphoto-1400218353-612x612.jpg';
-
-    // Preload header background
-    const headerBgImage = new Image();
-    headerBgImage.src = isSubPage ? '../images/direito-e-sustentabilidade.jpg' : 'images/direito-e-sustentabilidade.jpg';
-
-    // When the background image is loaded, apply it to the background wrapper
-    bgImage.onload = function() {
-      const bgWrappers = document.querySelectorAll('.bg-wrapper.lazy-background');
-      bgWrappers.forEach(wrapper => {
-        wrapper.classList.add('visible');
-      });
-    };
-
-    // Set header background image when loaded
-    headerBgImage.onload = function() {
-      const header = document.querySelector('header');
-      if (header) {
-        header.style.setProperty('--header-bg-image', `url("${headerBgImage.src}")`);
-      }
-    };
-
-    // Set CSS variables for impact card backgrounds
-    const root = document.documentElement;
-    const basePath = isSubPage ? '../images/' : 'images/';
-
-    root.style.setProperty('--climate-bg-image', `url("${basePath}istockphoto-1414916304-612x612.jpg")`);
-    root.style.setProperty('--water-bg-image', `url("${basePath}direito-e-sustentabilidade.jpg")`);
-    root.style.setProperty('--waste-bg-image', `url("${basePath}pexels-pok-rie-33563-3829454.jpg")`);
-    root.style.setProperty('--section-bg-image', `url("${basePath}pexels-pok-rie-33563-3829454.jpg")`);
-  } catch (error) {
-    console.error('Error in preloadCriticalImages:', error);
-  }
+  // When the image is loaded, apply it to the background wrapper
+  bgImage.onload = function() {
+    const bgWrappers = document.querySelectorAll('.bg-wrapper.lazy-background');
+    bgWrappers.forEach(wrapper => {
+      wrapper.classList.add('visible');
+    });
+  };
 }
 
 // Initialize module

@@ -13,10 +13,7 @@
   };
 
   function isSubpage() {
-    return window.location.pathname.includes('/paginas/') ||
-           window.location.pathname.includes('\\paginas\\') ||
-           window.location.pathname.includes('/paginas') ||
-           window.location.pathname.includes('\\paginas');
+    return window.location.pathname.includes('/paginas/');
   }
 
   function getCurrentPage() {
@@ -87,15 +84,7 @@
     const bgImage = new Image();
 
     // Determine correct path based on current page location
-    bgImage.src = isSubpage() ? '../images/pexels-christian-fohrer-894172-2912103.jpg' : 'images/pexels-christian-fohrer-894172-2912103.jpg';
-
-    // Preload logo image
-    const logoImage = new Image();
-    logoImage.src = isSubpage() ? '../images/istockphoto-1400218353-612x612.jpg' : 'images/istockphoto-1400218353-612x612.jpg';
-
-    // Preload header background
-    const headerBgImage = new Image();
-    headerBgImage.src = isSubpage() ? '../images/direito-e-sustentabilidade.jpg' : 'images/direito-e-sustentabilidade.jpg';
+    bgImage.src = isSubpage() ? '../images/direito-e-sustentabilidade.jpg' : 'images/direito-e-sustentabilidade.jpg';
 
     // When the image is loaded, apply it to the background wrapper
     bgImage.onload = function() {
@@ -104,31 +93,6 @@
         wrapper.classList.add('visible');
       });
     };
-
-    // Set header background image when loaded
-    headerBgImage.onload = function() {
-      const header = document.querySelector('header');
-      if (header) {
-        header.style.setProperty('--header-bg-image', `url("${headerBgImage.src}")`);
-      }
-    };
-
-    // Set CSS variables for impact card backgrounds
-    const root = document.documentElement;
-    const basePath = isSubpage() ? '../images/' : 'images/';
-
-    // Use try-catch to handle potential errors with setting CSS variables
-    try {
-      root.style.setProperty('--climate-bg-image', `url("${basePath}istockphoto-1414916304-612x612.jpg")`);
-      root.style.setProperty('--water-bg-image', `url("${basePath}direito-e-sustentabilidade.jpg")`);
-      root.style.setProperty('--waste-bg-image', `url("${basePath}pexels-pok-rie-33563-3829454.jpg")`);
-
-      // Also set the section background image variable
-      root.style.setProperty('--section-bg-image', `url("${basePath}pexels-pok-rie-33563-3829454.jpg")`);
-    } catch (error) {
-      console.error('Error setting CSS variables:', error);
-    }
-
   }
 
   // Theme Management
@@ -281,7 +245,7 @@
     document.querySelectorAll('.sidebar-nav a').forEach(link => {
       const href = link.getAttribute('href');
       const linkPage = href.split('/').pop();
-
+      
       if (linkPage === currentPage) {
         link.classList.add('active');
         link.setAttribute('aria-current', 'page');
