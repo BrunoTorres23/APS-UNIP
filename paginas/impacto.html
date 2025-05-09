@@ -26,7 +26,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-    <link rel="manifest" href="../site.webmanifest">
 </head>
 
 <body>
@@ -66,6 +65,13 @@
                     title="Soluções Sustentáveis" role="menuitem">
                     <i class="bi bi-lightbulb" aria-hidden="true"></i>
                     <span>Soluções Sustentáveis</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./heuristicas.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Heurísticas" role="menuitem">
+                    <i class="bi bi-check2-square" aria-hidden="true"></i>
+                    <span>Heurísticas</span>
                 </a>
             </li>
             <li role="none">
@@ -192,36 +198,13 @@
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="../js/modules/core.js" as="script" type="module">
     <link rel="preload" href="../images/direito-e-sustentabilidade.jpg" as="image">
 
     <!-- Bootstrap (loaded asynchronously) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
-    <!-- Modern browsers: ES modules with code splitting -->
-    <script type="module" src="../js/main.js"></script>
-
-    <!-- Legacy browsers: Fallback bundle -->
-    <script nomodule src="../js/bundle.js"></script>
-
     <!-- Service Worker Registration -->
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                // Determine correct path for service worker
-                const swPath = location.pathname.includes('/paginas/') ? '../service-worker.js' : './service-worker.js';
-
-                navigator.serviceWorker.register(swPath)
-                    .then(registration => {
-                        console.log('Service Worker registered with scope:', registration.scope);
-                    })
-                    .catch(error => {
-                        console.error('Service Worker registration failed:', error);
-                        // Fallback - site will still work without service worker
-                        console.log('Site will continue to function without offline capabilities');
-                    });
-            });
-        }
 
         // Theme toggle functionality
         document.addEventListener('DOMContentLoaded', function () {

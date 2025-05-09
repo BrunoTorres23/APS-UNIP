@@ -1,0 +1,89 @@
+/* Heurísticas Page Specific Styles */
+
+/* Base Styles */
+.heuristicas-page {
+  --heuristic-primary: #2c9fab;
+  --heuristic-secondary: #1b4b82;
+  --heuristic-accent: #4a90e2;
+  --heuristic-light: #e8f4f8;
+  --heuristic-dark: #2c3e50;
+  --card-radius: 12px;
+  --section-spacing: 5rem;
+}
+
+.heuristicas-content {
+  padding: 2rem;
+  margin-left: var(--sidebar-width);
+}
+
+/* Video Banner - Ajustado para centralizar e reduzir tamanho */
+.video-banner {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.video-banner .ratio {
+  margin: 0;
+  width: 100%;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* Removendo o overlay que cobria o vídeo */
+.video-overlay {
+  display: none;
+}
+
+/* Estilo para as imagens de heurísticas */
+.heuristic-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--card-radius);
+  margin: 1rem 0;
+  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.heuristic-image:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-md);
+}
+
+/* Ajustes para os cards de heurísticas */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.heuristic-card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.heuristic-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-5px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .video-banner {
+    max-width: 100%;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .heuristic-image {
+    height: 180px;
+  }
+}

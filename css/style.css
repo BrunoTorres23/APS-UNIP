@@ -185,7 +185,7 @@
   border-radius: 50%;
   background: rgba(27, 75, 130, 0.8);
   border: 2px solid rgba(255, 255, 255, 0.5);
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -1504,7 +1504,17 @@ footer {
   padding: 2rem 0;
   margin-top: 4rem;
 }
-
+.footer-links ul,
+a,
+li {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
 footer h3 {
   color: var(--accent-color);
   font-size: 1.25rem;
@@ -1939,7 +1949,19 @@ img.lazy.loaded {
   backface-visibility: hidden;
   transform: translateZ(0);
 }
-
+.a-whats-wid {
+  z-index: 1000;
+  position: fixed;
+  bottom: 50%;
+  right: 0;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.whats-logo {
+  width: 90px;
+  height: 90px;
+  animation: float 3s ease-in-out infinite;
+}
 /* Dark Theme Additional Styles */
 [data-theme="dark"] header {
   background: linear-gradient(135deg, var(--dark-bg), var(--primary-color));
@@ -2107,4 +2129,217 @@ img.lazy.loaded {
 [data-theme="dark"] .loading::after {
   border-color: var(--border-color);
   border-top-color: var(--primary-color);
+}
+
+/* Heuristics Page Styles */
+.video-section {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.video-description {
+  margin-top: 1rem;
+  font-style: italic;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heuristics-section {
+  margin-bottom: 3rem;
+}
+
+.heuristic-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.heuristic-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.heuristic-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.heuristic-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease;
+}
+
+.heuristic-image img:hover {
+  transform: scale(1.03);
+}
+
+.heuristic-content {
+  flex: 1.5;
+}
+
+.heuristic-content h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.rating-scale {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.rating-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.rating-bars {
+  display: flex;
+  gap: 3px;
+  flex: 1;
+}
+
+.rating-bar {
+  height: 10px;
+  flex: 1;
+  background-color: var(--light-gray);
+  border-radius: 5px;
+}
+
+.rating-bar.filled {
+  background-color: var(--primary-color);
+}
+
+.application-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.step-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.related-links {
+  margin-top: 4rem;
+}
+
+.link-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Dark Theme para elementos específicos das páginas de heurísticas e contato */
+[data-theme="dark"] .analysis-item {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .analysis-header i {
+  color: var(--accent-color);
+}
+
+[data-theme="dark"] .analysis-header h3 {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .progress {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .resource-card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .resource-card:hover {
+  background-color: rgba(74, 144, 226, 0.1);
+  border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .resource-card i {
+  color: var(--accent-color);
+}
+
+[data-theme="dark"] .contact-form input,
+[data-theme="dark"] .contact-form textarea,
+[data-theme="dark"] .contact-form select {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .contact-form input:focus,
+[data-theme="dark"] .contact-form textarea:focus,
+[data-theme="dark"] .contact-form select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem rgba(44, 159, 171, 0.25);
+}
+
+[data-theme="dark"] .contact-info {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .contact-info i {
+  color: var(--accent-color);
 }

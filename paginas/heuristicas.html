@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heurísticas de Design Sustentável - Projeto Acadêmico</title>
+    <meta name="description" content="Heurísticas de design para avaliação de interfaces sustentáveis">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" media="print"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    </noscript>
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="../css/style.css" media="all">
+    <link rel="stylesheet" href="../css/heuristicas.css" media="all">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+</head>
+
+<body class="heuristicas-page">
+    <!-- Background Image with Overlay -->
+    <div class="bg-wrapper lazy-background" style="--bg-image: url('../images/direito-e-sustentabilidade.jpg');"></div>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" role="navigation" aria-label="Menu principal">
+        <div class="sidebar-header">
+            <i class="bi bi-leaf-fill" aria-hidden="true"></i>
+        </div>
+        <ul class="sidebar-nav" role="menubar">
+            <li role="none">
+                <a href="../index.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Início" role="menuitem">
+                    <i class="bi bi-house-door" aria-hidden="true"></i>
+                    <span>Início</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./tecnologias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Tecnologias Verdes" role="menuitem">
+                    <i class="bi bi-cpu" aria-hidden="true"></i>
+                    <span>Tecnologias Verdes</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./impacto.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Impacto Ambiental" role="menuitem">
+                    <i class="bi bi-graph-up" aria-hidden="true"></i>
+                    <span>Impacto Ambiental</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./solucoes.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Soluções Sustentáveis" role="menuitem">
+                    <i class="bi bi-lightbulb" aria-hidden="true"></i>
+                    <span>Soluções Sustentáveis</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./heuristicas.html" class="nav-link active" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Heurísticas" role="menuitem" aria-current="page">
+                    <i class="bi bi-check2-square" aria-hidden="true"></i>
+                    <span>Heurísticas</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./contato.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Contato" role="menuitem">
+                    <i class="bi bi-envelope" aria-hidden="true"></i>
+                    <span>Contato</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./referencias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Referências" role="menuitem">
+                    <i class="bi bi-book" aria-hidden="true"></i>
+                    <span>Referências</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="content" role="main">
+        <!-- Header -->
+        <header role="banner">
+            <div class="container">
+                <button class="menu-toggle d-md-none" aria-label="Abrir menu" aria-expanded="false"
+                    aria-controls="sidebar">
+                    <i class="bi bi-list" aria-hidden="true"></i>
+                </button>
+                <h1>Heurísticas de Nielsen no Design Sustentável</h1>
+                <p>Princípios para interfaces ecologicamente responsáveis</p>
+            </div>
+        </header>
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Navegação estrutural">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Início</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Heurísticas</li>
+            </ol>
+        </nav>
+
+        <!-- Introduction Section -->
+        <section class="intro-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 text-justify">
+                        <h2>O que são Heurísticas de Nielsen no Design?</h2>
+                        <p class="lead">
+                            Heurísticas de design são princípios reconhecidos que orientam decisões de design para criar
+                            interfaces mais intuitivas,
+                            acessíveis e eficientes. Quando aplicadas à sustentabilidade, essas heurísticas também
+                            consideram o impacto ambiental
+                            das interfaces digitais.
+                        </p>
+                        <p>
+                            Este site foi desenvolvido seguindo heurísticas de design sustentável, combinando princípios
+                            de usabilidade
+                            com práticas ecologicamente responsáveis. <b>Veja o vídeo a seguir para entender mais
+                                afundo:</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Full-width Video Banner -->
+        <div class="container">
+            <div class="video-banner">
+                <div class="ratio ratio-16x9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/o1X3NpLbtvY?si=xurMXuw4pdEoorOI"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Heuristics Cards -->
+        <section class="heuristics-cards">
+            <div class="container">
+                <h2 class="text-center mb-5">3 Heurísticas de Nielsen Aplicadas Neste Site</h2>
+
+                <div class="card-container">
+                    <!-- Heurística 1 -->
+                    <div class="heuristic-card">
+                        <div class="card-icon">
+                            <i class="bi bi-lightning-charge-fill"></i>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1548611716-ad782502c9d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Eficiência Energética" class="heuristic-image">
+                        <h3>Eficiência Energética</h3>
+                        <p>
+                            Otimização do consumo de energia através de código eficiente e carregamento sob demanda.
+                        </p>
+                        <div class="card-details">
+                            <h4>Como aplicamos:</h4>
+                            <ul>
+                                <li>Lazy loading de imagens e recursos</li>
+                                <li>CSS e JavaScript minificados</li>
+                                <li>Carregamento assíncrono de recursos não-críticos</li>
+                                <li>Uso de CSS em vez de JavaScript quando possível</li>
+                            </ul>
+                            <div class="implementation-example">
+                                <h5>Exemplo de implementação:</h5>
+                                <code>
+                                    &lt;img src="..." loading="lazy" alt="..."&gt;
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Heurística 2 -->
+                    <div class="heuristic-card">
+                        <div class="card-icon">
+                            <i class="bi bi-universal-access"></i>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Acessibilidade Universal" class="heuristic-image">
+                        <h3>Acessibilidade Universal</h3>
+                        <p>
+                            Design inclusivo que garante acesso a todos os usuários, independente de suas capacidades.
+                        </p>
+                        <div class="card-details">
+                            <h4>Como aplicamos:</h4>
+                            <ul>
+                                <li>Contraste adequado entre texto e fundo</li>
+                                <li>Estrutura semântica com ARIA roles</li>
+                                <li>Suporte a navegação por teclado</li>
+                                <li>Textos alternativos para imagens</li>
+                            </ul>
+                            <div class="implementation-example">
+                                <h5>Exemplo de implementação:</h5>
+                                <code>
+                                    &lt;nav role="navigation" aria-label="Menu principal"&gt;
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Heurística 3 -->
+                    <div class="heuristic-card">
+                        <div class="card-icon">
+                            <i class="bi bi-speedometer2"></i>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Performance Sustentável" class="heuristic-image">
+                        <h3>Performance Sustentável</h3>
+                        <p>
+                            Otimização de recursos para reduzir o consumo de dados e processamento.
+                        </p>
+                        <div class="card-details">
+                            <h4>Como aplicamos:</h4>
+                            <ul>
+                                <li>Compressão de imagens e recursos</li>
+                                <li>Uso de formatos modernos de imagem</li>
+                                <li>Preload de recursos críticos</li>
+                                <li>Redução de dependências externas</li>
+                            </ul>
+                            <div class="implementation-example">
+                                <h5>Exemplo de implementação:</h5>
+                                <code>
+                                    &lt;link rel="preload" href="..." as="script"&gt;
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Site Analysis Section -->
+        <section class="site-analysis">
+            <div class="container">
+                <h2 class="text-center mb-4">Análise Heurística do Site</h2>
+
+                <div class="analysis-grid">
+                    <div class="analysis-item">
+                        <div class="analysis-header">
+                            <i class="bi bi-speedometer"></i>
+                            <h3>Velocidade de Carregamento</h3>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85"
+                                aria-valuemin="0" aria-valuemax="100">85%</div>
+                        </div>
+                        <p>Otimização de recursos e carregamento assíncrono</p>
+                    </div>
+
+                    <div class="analysis-item">
+                        <div class="analysis-header">
+                            <i class="bi bi-battery-charging"></i>
+                            <h3>Eficiência Energética</h3>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 78%;" aria-valuenow="78"
+                                aria-valuemin="0" aria-valuemax="100">78%</div>
+                        </div>
+                        <p>Redução do consumo de CPU e bateria</p>
+                    </div>
+
+                    <div class="analysis-item">
+                        <div class="analysis-header">
+                            <i class="bi bi-eye"></i>
+                            <h3>Acessibilidade</h3>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 92%;" aria-valuenow="92"
+                                aria-valuemin="0" aria-valuemax="100">92%</div>
+                        </div>
+                        <p>Conformidade com WCAG 2.1 AA</p>
+                    </div>
+
+                    <div class="analysis-item">
+                        <div class="analysis-header">
+                            <i class="bi bi-cloud-download"></i>
+                            <h3>Tamanho Total</h3>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 88%;" aria-valuenow="88"
+                                aria-valuemin="0" aria-valuemax="100">88%</div>
+                        </div>
+                        <p>Redução de 45% no tamanho dos recursos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container text-center">
+                <h2>Aplique Estas Heurísticas em Seus Projetos</h2>
+                <p class="lead">Torne seus sites mais sustentáveis e acessíveis seguindo estes princípios</p>
+                <div class="cta-buttons">
+                    <a href="./tecnologias.html" class="btn btn-primary btn-lg">Ver Tecnologias Verdes</a>
+                    <a href="./contato.html" class="btn btn-outline-primary btn-lg">Entre em Contato</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Resources -->
+        <section class="related-resources">
+            <div class="container">
+                <h2 class="text-center mb-4">Recursos Relacionados</h2>
+                <div class="resources-grid">
+                    <a href="./tecnologias.html" class="resource-card">
+                        <i class="bi bi-cpu"></i>
+                        <h3>Tecnologias Verdes</h3>
+                        <p>Ferramentas e tecnologias para desenvolvimento sustentável</p>
+                    </a>
+                    <a href="./impacto.html" class="resource-card">
+                        <i class="bi bi-graph-up"></i>
+                        <h3>Impacto Ambiental</h3>
+                        <p>Como medir e reduzir o impacto ambiental digital</p>
+                    </a>
+                    <a href="./solucoes.html" class="resource-card">
+                        <i class="bi bi-lightbulb"></i>
+                        <h3>Soluções Sustentáveis</h3>
+                        <p>Implementações práticas para um desenvolvimento mais verde</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Sobre o Projeto</h3>
+                    <p>Este site foi desenvolvido como parte de um projeto acadêmico sobre tecnologias sustentáveis e
+                        design ecologicamente responsável.</p>
+                </div>
+                <div class="col-md-3">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="./tecnologias.html">Tecnologias</a></li>
+                        <li><a href="./heuristicas.html">Heurísticas</a></li>
+                        <li><a href="./contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3>Conecte-se</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="copyright">©2025 Projeto Acadêmico - Tecnologia e Sustentabilidade</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap (loaded asynchronously) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Script otimizado -->
+    <script src="../js/optimized.js" defer></script>
+</body>
+
+</html>
