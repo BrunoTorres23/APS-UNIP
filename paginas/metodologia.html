@@ -1,224 +1,258 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metodologia - Projeto Acadêmico</title>
-    <!-- Critical CSS -->
-    <link rel="stylesheet" href="../css/style.css" media="all">
-    <!-- Non-critical CSS loaded asynchronously -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    </noscript>
-</head>
-<body>
-    <!-- Skip Link -->
-    <a href="#content" class="skip-link">Pular para o conteúdo principal</a>
 
-    <div class="bg-wrapper" aria-hidden="true"></div>
-    <nav class="sidebar" role="navigation" aria-label="Menu principal">
-        <div class="sidebar-header">
-            <i class="fas fa-leaf" aria-hidden="true"></i>
-            <span>Tecnologia e Sustentabilidade</span>
-        </div>
-        <ul class="sidebar-nav" role="menubar">
-                <li role="none"><a href="../index.html" role="menuitem"><i class="fas fa-home" aria-hidden="true"></i><span>Início</span></a></li>
-                <li role="none"><a href="./tecnologias.html" role="menuitem"><i class="fas fa-microchip" aria-hidden="true"></i><span>Tecnologias Verdes</span></a></li>
-                <li role="none"><a href="./impacto.html" role="menuitem"><i class="fas fa-chart-line" aria-hidden="true"></i><span>Impacto Ambiental</span></a></li>
-                <li role="none"><a href="./solucoes.html" role="menuitem"><i class="fas fa-lightbulb" aria-hidden="true"></i><span>Soluções Sustentáveis</span></a></li>
-                <li role="none"><a href="./metodologia.html" class="active" role="menuitem" aria-current="page"><i class="fas fa-flask" aria-hidden="true"></i><span>Metodologia</span></a></li>
-                <li role="none"><a href="./referencias.html" role="menuitem"><i class="fas fa-book" aria-hidden="true"></i><span>Referências</span></a></li>
-            </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metodologia - Projeto Acadêmico</title>
+  <!-- Critical CSS -->
+  <link rel="stylesheet" href="../css/style.css" media="all">
+  <!-- Non-critical CSS loaded asynchronously -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" media="print"
+    onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print"
+    onload="this.media='all'">
+  <noscript>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </noscript>
+</head>
+
+<body>
+
+  <div class="bg-wrapper" aria-hidden="true"></div>
+  <nav class="sidebar" role="navigation" aria-label="Menu principal">
+    <div class="sidebar-header">
+      <i class="fas fa-leaf" aria-hidden="true"></i>
+      <span>Tecnologia e Sustentabilidade</span>
+    </div>
+    <ul class="sidebar-nav" role="menubar">
+      <li role="none">
+        <a href="../index.html" role="menuitem">
+          <i class="fas fa-home" aria-hidden="true"></i>
+          <span>Início</span>
+        </a>
+      </li>
+      <li role="none">
+        <a href="./tecnologias.html" role="menuitem">
+          <i class="fas fa-microchip" aria-hidden="true"></i>
+          <span>Tecnologias Verdes</span>
+        </a>
+      </li>
+      <li role="none">
+        <a href="./impacto.html" role="menuitem">
+          <i class="fas fa-chart-line" aria-hidden="true"></i>
+          <span>Impacto Ambiental</span>
+        </a>
+      </li>
+      <li role="none">
+        <a href="./solucoes.html" role="menuitem">
+          <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          <span>Soluções Sustentáveis</span>
+        </a>
+      </li>
+      <li role="none">
+        <a href="./contato.html" role="menuitem">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <span>Contato</span>
+        </a>
+      </li>
+      <li role="none">
+        <a href="./referencias.html" role="menuitem">
+          <i class="fas fa-book" aria-hidden="true"></i>
+          <span>Referências</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <main id="content" role="main">
+    <header role="banner">
+      <button class="menu-toggle d-md-none" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <h1>Metodologia</h1>
+      <p>Como desenvolvemos nossa pesquisa</p>
+    </header>
+
+    <nav aria-label="Navegação estrutural">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../index.html">Início</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Metodologia</li>
+      </ol>
     </nav>
 
-    <div class="sidebar-overlay" aria-hidden="true"></div>
+    <section class="methodology-section" aria-labelledby="methodology-heading">
+      <h2 id="methodology-heading" class="visually-hidden">Detalhes da Metodologia</h2>
+      <div class="methodology-card" tabindex="0">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <h3>Pesquisa Bibliográfica</h3>
+        <p>Análise de fontes acadêmicas:</p>
+        <ul>
+          <li>Artigos científicos</li>
+          <li>Livros especializados</li>
+          <li>Relatórios técnicos</li>
+          <li>Publicações recentes</li>
+        </ul>
+      </div>
 
-    <main id="content" role="main">
-        <header role="banner">
-            <button class="menu-toggle d-md-none" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
-            <h1>Metodologia</h1>
-            <p>Como desenvolvemos nossa pesquisa</p>
-        </header>
+      <div class="methodology-card" tabindex="0">
+        <i class="fas fa-chart-bar" aria-hidden="true"></i>
+        <h3>Análise de Dados</h3>
+        <p>Processo de análise:</p>
+        <ul>
+          <li>Coleta de dados</li>
+          <li>Processamento estatístico</li>
+          <li>Visualização de dados</li>
+          <li>Interpretação de resultados</li>
+        </ul>
+      </div>
 
-        <nav aria-label="Navegação estrutural">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../index.html">Início</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Metodologia</li>
-            </ol>
-        </nav>
+      <div class="methodology-card" tabindex="0">
+        <i class="fas fa-users" aria-hidden="true"></i>
+        <h3>Pesquisa de Campo</h3>
+        <p>Métodos utilizados:</p>
+        <ul>
+          <li>Entrevistas</li>
+          <li>Observação participante</li>
+          <li>Questionários</li>
+          <li>Estudos de caso</li>
+        </ul>
+      </div>
+    </section>
 
-        <section class="methodology-section" aria-labelledby="methodology-heading">
-            <h2 id="methodology-heading" class="visually-hidden">Detalhes da Metodologia</h2>
-            <div class="methodology-card" tabindex="0">
-                <i class="fas fa-search" aria-hidden="true"></i>
-                <h3>Pesquisa Bibliográfica</h3>
-                <p>Análise de fontes acadêmicas:</p>
-                <ul>
-                    <li>Artigos científicos</li>
-                    <li>Livros especializados</li>
-                    <li>Relatórios técnicos</li>
-                    <li>Publicações recentes</li>
-                </ul>
-            </div>
+    <section class="process-section" aria-labelledby="process-heading">
+      <h2 id="process-heading">Processo de Desenvolvimento</h2>
+      <div class="process-grid">
+        <div class="process-card" tabindex="0">
+          <h3 id="phase1-heading">Fase 1: Planejamento</h3>
+          <p>Etapas iniciais:</p>
+          <ul>
+            <li>Definição do escopo</li>
+            <li>Revisão da literatura</li>
+            <li>Elaboração do cronograma</li>
+            <li>Seleção de metodologias</li>
+          </ul>
+        </div>
 
-            <div class="methodology-card" tabindex="0">
-                <i class="fas fa-chart-bar" aria-hidden="true"></i>
-                <h3>Análise de Dados</h3>
-                <p>Processo de análise:</p>
-                <ul>
-                    <li>Coleta de dados</li>
-                    <li>Processamento estatístico</li>
-                    <li>Visualização de dados</li>
-                    <li>Interpretação de resultados</li>
-                </ul>
-            </div>
+        <div class="process-card" tabindex="0">
+          <h3 id="phase2-heading">Fase 2: Execução</h3>
+          <p>Desenvolvimento:</p>
+          <ul>
+            <li>Coleta de dados</li>
+            <li>Análise de informações</li>
+            <li>Desenvolvimento do site</li>
+            <li>Testes e validação</li>
+          </ul>
+        </div>
 
-            <div class="methodology-card" tabindex="0">
-                <i class="fas fa-users" aria-hidden="true"></i>
-                <h3>Pesquisa de Campo</h3>
-                <p>Métodos utilizados:</p>
-                <ul>
-                    <li>Entrevistas</li>
-                    <li>Observação participante</li>
-                    <li>Questionários</li>
-                    <li>Estudos de caso</li>
-                </ul>
-            </div>
-        </section>
+        <div class="process-card" tabindex="0">
+          <h3 id="phase3-heading">Fase 3: Conclusão</h3>
+          <p>Finalização:</p>
+          <ul>
+            <li>Análise dos resultados</li>
+            <li>Elaboração de conclusões</li>
+            <li>Recomendações</li>
+            <li>Apresentação final</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        <section class="process-section" aria-labelledby="process-heading">
-            <h2 id="process-heading">Processo de Desenvolvimento</h2>
-            <div class="process-grid">
-                <div class="process-card" tabindex="0">
-                    <h3 id="phase1-heading">Fase 1: Planejamento</h3>
-                    <p>Etapas iniciais:</p>
-                    <ul>
-                        <li>Definição do escopo</li>
-                        <li>Revisão da literatura</li>
-                        <li>Elaboração do cronograma</li>
-                        <li>Seleção de metodologias</li>
-                    </ul>
-                </div>
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+  <!-- Resource Hints for Performance -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
-                <div class="process-card" tabindex="0">
-                    <h3 id="phase2-heading">Fase 2: Execução</h3>
-                    <p>Desenvolvimento:</p>
-                    <ul>
-                        <li>Coleta de dados</li>
-                        <li>Análise de informações</li>
-                        <li>Desenvolvimento do site</li>
-                        <li>Testes e validação</li>
-                    </ul>
-                </div>
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="../js/modules/core.js" as="script" type="module">
+  <link rel="preload" href="../images/direito-e-sustentabilidade.jpg" as="image">
 
-                <div class="process-card" tabindex="0">
-                    <h3 id="phase3-heading">Fase 3: Conclusão</h3>
-                    <p>Finalização:</p>
-                    <ul>
-                        <li>Análise dos resultados</li>
-                        <li>Elaboração de conclusões</li>
-                        <li>Recomendações</li>
-                        <li>Apresentação final</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
+  <!-- Bootstrap (loaded asynchronously) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
-    <div class="sidebar-overlay" aria-hidden="true"></div>
-    <!-- Resource Hints for Performance -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <!-- Modern browsers: ES modules with code splitting -->
+  <script type="module" src="../js/main.js"></script>
 
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="../js/modules/core.js" as="script" type="module">
-    <link rel="preload" href="../images/direito-e-sustentabilidade.jpg" as="image">
+  <!-- Legacy browsers: Fallback bundle -->
+  <script nomodule src="../js/bundle.js"></script>
 
-    <!-- Bootstrap (loaded asynchronously) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        // Determine correct path for service worker
+        const swPath = location.pathname.includes('/paginas/') ? '../service-worker.js' : './service-worker.js';
 
-    <!-- Modern browsers: ES modules with code splitting -->
-    <script type="module" src="../js/main.js"></script>
+        navigator.serviceWorker.register(swPath)
+          .then(registration => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch(error => {
+            console.error('Service Worker registration failed:', error);
+            // Fallback - site will still work without service worker
+            console.log('Site will continue to function without offline capabilities');
+          });
+      });
+    }
 
-    <!-- Legacy browsers: Fallback bundle -->
-    <script nomodule src="../js/bundle.js"></script>
+    // Theme toggle functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const themeToggle = document.querySelector('.theme-toggle');
+      if (themeToggle) {
+        // Check for saved theme preference or use system preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-    <!-- Service Worker Registration -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          // Determine correct path for service worker
-          const swPath = location.pathname.includes('/paginas/') ? '../service-worker.js' : './service-worker.js';
+        // Set initial theme
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+          updateThemeIcon(savedTheme, themeToggle);
+        } else if (prefersDarkScheme.matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          updateThemeIcon('dark', themeToggle);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+          updateThemeIcon('light', themeToggle);
+        }
 
-          navigator.serviceWorker.register(swPath)
-            .then(registration => {
-              console.log('Service Worker registered with scope:', registration.scope);
-            })
-            .catch(error => {
-              console.error('Service Worker registration failed:', error);
-              // Fallback - site will still work without service worker
-              console.log('Site will continue to function without offline capabilities');
-            });
+        // Add click event listener
+        themeToggle.addEventListener('click', function () {
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+          const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          updateThemeIcon(newTheme, themeToggle);
         });
       }
 
-      // Theme toggle functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const themeToggle = document.querySelector('.theme-toggle');
-        if (themeToggle) {
-          // Check for saved theme preference or use system preference
-          const savedTheme = localStorage.getItem('theme');
-          const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-          // Set initial theme
-          if (savedTheme) {
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            updateThemeIcon(savedTheme, themeToggle);
-          } else if (prefersDarkScheme.matches) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            updateThemeIcon('dark', themeToggle);
+      // Update theme icon based on current theme
+      function updateThemeIcon(theme, button) {
+        const icon = button.querySelector('i');
+        if (icon) {
+          if (theme === 'light') {
+            icon.className = 'bi bi-moon';
+            button.setAttribute('title', 'Mudar para tema escuro');
           } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            updateThemeIcon('light', themeToggle);
-          }
-
-          // Add click event listener
-          themeToggle.addEventListener('click', function() {
-            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme, themeToggle);
-          });
-        }
-
-        // Update theme icon based on current theme
-        function updateThemeIcon(theme, button) {
-          const icon = button.querySelector('i');
-          if (icon) {
-            if (theme === 'light') {
-              icon.className = 'bi bi-moon';
-              button.setAttribute('title', 'Mudar para tema escuro');
-            } else {
-              icon.className = 'bi bi-sun';
-              button.setAttribute('title', 'Mudar para tema claro');
-            }
+            icon.className = 'bi bi-sun';
+            button.setAttribute('title', 'Mudar para tema claro');
           }
         }
-      });
-    </script>
+      }
+    });
+  </script>
 
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">
-        <i class="bi bi-moon" aria-hidden="true"></i>
-    </button>
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">
+    <i class="bi bi-moon" aria-hidden="true"></i>
+  </button>
 </body>
+
 </html>
