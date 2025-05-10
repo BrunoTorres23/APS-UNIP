@@ -2368,3 +2368,22 @@ section p,
 section li {
   color: var(--text-secondary);
 }
+
+/* Corrigindo a cor do link de política de privacidade */
+.privacy-link {
+  color: var(--primary-color);
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.privacy-link:hover {
+  color: var(--primary-hover);
+}
+
+[data-theme="dark"] .privacy-link {
+  color: var(--accent-color);
+}
+
+[data-theme="dark"] .privacy-link:hover {
+  color: var(--accent-hover);
+}

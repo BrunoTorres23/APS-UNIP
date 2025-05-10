@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Notícias - Tecnologia e Sustentabilidade</title>
+    <meta name="description"
+        content="Notícias, eventos e atualizações sobre tecnologia sustentável e inovação ambiental">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" media="print"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    </noscript>
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="../css/style.css" media="all">
+    <link rel="stylesheet" href="../css/noticias.css" media="all">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+</head>
+
+<body class="news-page">
+    <div class="bg-wrapper lazy-background"></div>
+    <!-- Sidebar -->
+    <nav class="sidebar" role="navigation" aria-label="Menu principal">
+        <div class="sidebar-header">
+            <i class="bi bi-leaf-fill" aria-hidden="true"></i>
+        </div>
+        <ul class="sidebar-nav" role="menubar">
+            <li role="none">
+                <a href="../index.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Início" role="menuitem">
+                    <i class="bi bi-house-door" aria-hidden="true"></i>
+                    <span>Início</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./tecnologias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Tecnologias Verdes" role="menuitem">
+                    <i class="bi bi-cpu" aria-hidden="true"></i>
+                    <span>Tecnologias Verdes</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./impacto.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Impacto Ambiental" role="menuitem">
+                    <i class="bi bi-graph-up" aria-hidden="true"></i>
+                    <span>Impacto Ambiental</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./solucoes.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Soluções Sustentáveis" role="menuitem">
+                    <i class="bi bi-lightbulb" aria-hidden="true"></i>
+                    <span>Soluções Sustentáveis</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./heuristicas.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Heurísticas" role="menuitem" aria-current="page">
+                    <i class="bi bi-check2-square" aria-hidden="true"></i>
+                    <span>Heurísticas</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./noticias.html" class="nav-link active" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Notícias" role="menuitem" aria-current="page">
+                    <i class="bi bi-newspaper" aria-hidden="true"></i>
+                    <span>Notícias & Eventos</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="biblioteca.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Biblioteca" role="menuitem" aria-current="page">
+                    <i class="bi bi-stack" aria-hidden="true"></i>
+                    <span>Biblioteca</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./contato.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Contato" role="menuitem">
+                    <i class="bi bi-envelope" aria-hidden="true"></i>
+                    <span>Contato</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./referencias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Referências" role="menuitem">
+                    <i class="bi bi-book" aria-hidden="true"></i>
+                    <span>Referências</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle d-md-none" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+        <i class="bi bi-list" aria-hidden="true"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main id="content" role="main">
+        <!-- Header -->
+        <header class="blog-header" role="banner">
+            <div class="container">
+                <h1>Blog & Notícias</h1>
+                <p>Acompanhe as últimas novidades sobre tecnologia sustentável e inovação ambiental</p>
+            </div>
+        </header>
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Navegação estrutural">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Início</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Blog & Notícias</li>
+            </ol>
+        </nav>
+
+        <!-- Destaque Principal -->
+        <section class="featured-news">
+            <div class="container">
+                <div class="featured-article">
+                    <div class="row g-0">
+                        <div class="col-lg-7">
+                            <div class="featured-image">
+                                <img src="https://images.unsplash.com/photo-1623177579213-7eaeb56c0e04?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Cúpula do Clima da ONU" class="img-fluid">
+                                <div class="featured-badge">Destaque</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="featured-content">
+                                <div class="news-meta">
+                                    <span class="news-category">Evento Global</span>
+                                    <span class="news-date">12 de Outubro, 2023</span>
+                                </div>
+                                <h2>Cúpula do Clima da ONU anuncia novas metas para redução de emissões</h2>
+                                <p>Representantes de 195 países se reuniram para estabelecer novos compromissos
+                                    climáticos. Grandes empresas de tecnologia anunciaram investimentos em energia limpa
+                                    e soluções baseadas em IA para monitoramento ambiental.</p>
+                                <div class="news-tags">
+                                    <span>ONU</span>
+                                    <span>Clima</span>
+                                    <span>Políticas</span>
+                                </div>
+                                <a href="#" class="btn btn-primary">Leia mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Próximos Eventos -->
+        <section class="upcoming-events">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Próximos Eventos</h2>
+                    <a href="#" class="view-all">Ver todos <i class="bi bi-arrow-right"></i></a>
+                </div>
+
+                <div class="events-timeline">
+                    <div class="event-item">
+                        <div class="event-date">
+                            <div class="date-box">
+                                <span class="month">NOV</span>
+                                <span class="day">15</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Fórum Global de Tecnologias Verdes</h3>
+                            <div class="event-meta">
+                                <span><i class="bi bi-geo-alt"></i> São Paulo, Brasil</span>
+                                <span><i class="bi bi-clock"></i> 09:00 - 18:00</span>
+                            </div>
+                            <p>Evento que reúne especialistas em tecnologia e sustentabilidade para discutir inovações e
+                                políticas ambientais.</p>
+                            <div class="event-orgs">
+                                <span>Organizadores:</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/UN_emblem_blue.svg/1200px-UN_emblem_blue.svg.png"
+                                    alt="ONU" class="org-logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Inpelogo.png" alt="INPE"
+                                    class="org-logo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-date">
+                            <div class="date-box">
+                                <span class="month">DEZ</span>
+                                <span class="day">05</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Conferência sobre IA e Sustentabilidade</h3>
+                            <div class="event-meta">
+                                <span><i class="bi bi-geo-alt"></i> Online</span>
+                                <span><i class="bi bi-clock"></i> 14:00 - 17:30</span>
+                            </div>
+                            <p>Webinar sobre como a inteligência artificial pode contribuir para soluções ambientais e
+                                desenvolvimento sustentável.</p>
+                            <div class="event-orgs">
+                                <span>Organizadores:</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                                    alt="Google" class="org-logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1200px-Microsoft_logo.svg.png"
+                                    alt="Microsoft" class="org-logo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-date">
+                            <div class="date-box">
+                                <span class="month">NOV</span>
+                                <span class="day">10-21</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3>A COP30 (30ª Conferência das Partes da Convenção-Quadro das Nações Unidas sobre Mudança
+                                do Clima)</h3>
+                            <div class="event-meta">
+                                <span><i class="bi bi-geo-alt"></i> Belém - Pará, Brasil</span>
+                                <span><i class="bi bi-clock"></i> 10:00 - 16:00</span>
+                            </div>
+                            <p>A COP30 visa fortalecer a implementação do Acordo de Paris e a manutenção da meta de
+                                limitar o aquecimento global a
+                                1,5°C</p>
+                            <div class="event-orgs">
+                                <span>Organizadores:</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/UN_emblem_blue.svg/1200px-UN_emblem_blue.svg.png"
+                                    alt="IBGE" class="org-logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vídeo em Destaque -->
+        <section class="featured-video">
+            <div class="container">
+                <h2 class="section-title">Vídeo em Destaque</h2>
+                <div class="video-container">
+                    <div class="ratio ratio-16x9">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/lijn6_nPdH0?si=oGweAOdVyIEiYwoG"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-caption">
+                        <h3>Como a IA Está Revolucionando a Detecção de Mudanças Climáticas!</h3>
+                        <p>A Inteligência Artificial está revolucionando a maneira como monitoramos as mudanças
+                            climáticas! No vídeo de hoje, você
+                            vai descobrir como a IA está ajudando na detecção de desmatamento, poluição e padrões
+                            climáticos extremos.
+                            <span><i class="bi bi-calendar3"></i> Publicado em 20/03/2025</span>
+                            <span><i class="bi bi-person"></i> Por: Full Stack Tech</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notícias Recentes -->
+        <section class="recent-news">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Notícias Recentes</h2>
+                </div>
+
+                <div class="row">
+                    <!-- Notícia 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img src="https://images.unsplash.com/photo-1572204292164-b35ba943fca7?q=80&w=1000&auto=format&fit=crop"
+                                    alt="IBGE divulga dados ambientais" class="img-fluid">
+                                <div class="news-category">Dados</div>
+                            </div>
+                            <div class="news-content">
+                                <div class="news-meta">
+                                    <span class="news-date"><i class="bi bi-calendar3"></i> 5 de Outubro, 2023</span>
+                                    <span class="news-source"><i class="bi bi-building"></i> IBGE</span>
+                                </div>
+                                <h3>IBGE divulga novos dados sobre desmatamento no Brasil</h3>
+                                <p>Levantamento mostra redução de 12% no desmatamento em áreas monitoradas, mas alerta
+                                    para novos focos de degradação.</p>
+                                <a href="#" class="read-more">Leia mais <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Notícia 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Microsoft anuncia iniciativa" class="img-fluid">
+                                <div class="news-category">Tecnologia</div>
+                            </div>
+                            <div class="news-content">
+                                <div class="news-meta">
+                                    <span class="news-date"><i class="bi bi-calendar3"></i> 2 de Outubro, 2023</span>
+                                    <span class="news-source"><i class="bi bi-building"></i> Microsoft</span>
+                                </div>
+                                <h3>Microsoft anuncia investimento de US$ 1 bilhão em tecnologias verdes</h3>
+                                <p>Iniciativa visa desenvolver soluções de IA para monitoramento ambiental e redução da
+                                    pegada de carbono.</p>
+                                <a href="#" class="read-more">Leia mais <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Notícia 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img src="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1000&auto=format&fit=crop"
+                                    alt="INPE lança sistema" class="img-fluid">
+                                <div class="news-category">Monitoramento</div>
+                            </div>
+                            <div class="news-content">
+                                <div class="news-meta">
+                                    <span class="news-date"><i class="bi bi-calendar3"></i> 28 de Setembro, 2023</span>
+                                    <span class="news-source"><i class="bi bi-building"></i> INPE</span>
+                                </div>
+                                <h3>INPE lança novo sistema de monitoramento por satélite</h3>
+                                <p>Tecnologia permite acompanhamento em tempo real de queimadas e desmatamento com
+                                    precisão de até 3 metros.</p>
+                                <a href="#" class="read-more">Leia mais <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Notícia 4 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Google e ONG" class="img-fluid">
+                                <div class="news-category">Parceria</div>
+                            </div>
+                            <div class="news-content">
+                                <div class="news-meta">
+                                    <span class="news-date"><i class="bi bi-calendar3"></i> 25 de Setembro, 2023</span>
+                                    <span class="news-source"><i class="bi bi-building"></i> Google</span>
+                                </div>
+                                <h3>Google firma parceria com ONGs para proteção da Amazônia</h3>
+                                <p>Projeto utilizará inteligência artificial para identificar áreas de risco e auxiliar
+                                    na fiscalização ambiental.</p>
+                                <a href="#" class="read-more">Leia mais <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Notícia 5 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=1000&auto=format&fit=crop"
+                                    alt="ONU relatório" class="img-fluid">
+                                <div class="news-category">Relatório</div>
+                            </div>
+                            <div class="news-content">
+                                <div class="news-meta">
+                                    <span class="news-date"><i class="bi bi-calendar3"></i> 20 de Setembro, 2023</span>
+                                    <span class="news-source"><i class="bi bi-building"></i> ONU</span>
+                                </div>
+                                <h3>Relatório da ONU alerta para aceleração das mudanças climáticas</h3>
+                                <p>Documento aponta que metas do Acordo de Paris podem não ser suficientes para conter o
+                                    aquecimento global.</p>
+                                <a href="#" class="read-more">Leia mais <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Notícia 6 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Tesla energia solar" class="img-fluid">
+                                <div class="news-category">Inovação</div>
+                            </div>
+                            <div class="news-content">
+                                <div class="news-meta">
+                                    <span class="news-date"><i class="bi bi-calendar3"></i> 15 de Setembro, 2023</span>
+                                    <span class="news-source"><i class="bi bi-building"></i> Tesla</span>
+                                </div>
+                                <h3>Tesla apresenta nova geração de painéis solares com eficiência recorde</h3>
+                                <p>Tecnologia promete reduzir em 30% o custo de instalação e aumentar em 25% a geração
+                                    de
+                                    energia.</p>
+                                <a href="#" class="read-more">Leia mais <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">
+        <i class="bi bi-moon" aria-hidden="true"></i>
+    </button>
+
+    <script>
+        // Theme toggle functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggle = document.querySelector('.theme-toggle');
+            if (themeToggle) {
+                // Check for saved theme preference or use system preference
+                const savedTheme = localStorage.getItem('theme');
+                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+                // Set initial theme
+                if (savedTheme) {
+                    document.documentElement.setAttribute('data-theme', savedTheme);
+                    updateThemeIcon(savedTheme, themeToggle);
+                } else if (prefersDarkScheme.matches) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    updateThemeIcon('dark', themeToggle);
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    updateThemeIcon('light', themeToggle);
+                }
+
+                // Add click event listener
+                themeToggle.addEventListener('click', function () {
+                    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                    updateThemeIcon(newTheme, themeToggle);
+                });
+            }
+
+            // Update theme icon based on current theme
+            function updateThemeIcon(theme, button) {
+                const icon = button.querySelector('i');
+                if (icon) {
+                    if (theme === 'light') {
+                        icon.className = 'bi bi-moon';
+                        button.setAttribute('title', 'Mudar para tema escuro');
+                    } else {
+                        icon.className = 'bi bi-sun';
+                        button.setAttribute('title', 'Mudar para tema claro');
+                    }
+                }
+            }
+        });
+    </script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+
+</html>

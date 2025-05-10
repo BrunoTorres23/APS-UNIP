@@ -9,27 +9,200 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Non-critical CSS loaded asynchronously -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" media="print"
-        onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    </noscript>
-    <!-- Critical CSS -->
-    <link rel="stylesheet" href="../css/style.css" media="all">
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <style>
+        /* Estilos específicos para a página de impacto */
+        .impact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/direito-e-sustentabilidade.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .impact-category {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .impact-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .impact-header {
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .impact-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .impact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-box {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .image-placeholder {
+            background-color: var(--light-bg);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        [data-theme="dark"] .image-placeholder {
+            background-color: var(--dark-bg);
+        }
+
+        .climate {
+            --category-color: #e74c3c;
+        }
+
+        .water {
+            --category-color: #3498db;
+        }
+
+        .waste {
+            --category-color: #2ecc71;
+        }
+
+        .biodiversity {
+            --category-color: #f39c12;
+        }
+
+        .impact-category.climate .impact-header {
+            background-color: var(--category-color);
+        }
+
+        .impact-category.water .impact-header {
+            background-color: var(--category-color);
+        }
+
+        .impact-category.waste .impact-header {
+            background-color: var(--category-color);
+        }
+
+        .impact-category.biodiversity .impact-header {
+            background-color: var(--category-color);
+        }
+
+        .impact-category.climate .impact-icon {
+            color: var(--category-color);
+        }
+
+        .impact-category.water .impact-icon {
+            color: var(--category-color);
+        }
+
+        .impact-category.waste .impact-icon {
+            color: var(--category-color);
+        }
+
+        .impact-category.biodiversity .impact-icon {
+            color: var(--category-color);
+        }
+
+        .data-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .data-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .quote-box {
+            background-color: var(--light-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+        }
+
+        [data-theme="dark"] .quote-box {
+            background-color: var(--dark-bg);
+        }
+
+        .quote-author {
+            font-weight: 600;
+            text-align: right;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-hero {
+                padding: 3rem 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
     <!-- Background Image -->
     <div class="bg-wrapper lazy-background" style="--bg-image: url('../images/direito-e-sustentabilidade.jpg');"></div>
 
@@ -75,6 +248,20 @@
                 </a>
             </li>
             <li role="none">
+                <a href="./noticias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Notícias" role="menuitem">
+                    <i class="bi bi-newspaper" aria-hidden="true"></i>
+                    <span>Notícias & Eventos</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./biblioteca.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Biblioteca" role="menuitem">
+                    <i class="bi bi-stack" aria-hidden="true"></i>
+                    <span>Biblioteca</span>
+                </a>
+            </li>
+            <li role="none">
                 <a href="./contato.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
                     title="Contato" role="menuitem">
                     <i class="bi bi-envelope" aria-hidden="true"></i>
@@ -96,112 +283,162 @@
 
     <!-- Main Content -->
     <main id="content" role="main">
-        <!-- Header -->
-        <header role="banner">
-            <div class="container">
+        <!-- Hero Section -->
+        <div class="impact-hero">
+            <div class="container text-center">
                 <button class="menu-toggle d-md-none" aria-label="Abrir menu" aria-expanded="false"
                     aria-controls="sidebar">
                     <i class="bi bi-list" aria-hidden="true"></i>
                 </button>
                 <h1>Impacto Ambiental</h1>
-                <p>Análise dos efeitos da tecnologia no meio ambiente</p>
+                <p class="lead">Análise dos efeitos da tecnologia no meio ambiente</p>
             </div>
-        </header>
+        </div>
 
-        <!-- Breadcrumb -->
-        <nav aria-label="Navegação estrutural">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../index.html">Início</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Impacto Ambiental</li>
-            </ol>
-        </nav>
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="Navegação estrutural">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../index.html">Início</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Impacto Ambiental</li>
+                </ol>
+            </nav>
 
-        <!-- Impact Section -->
-        <section class="impact-section">
-            <h2 class="section-title">Impacto Ambiental</h2>
-
-            <div class="tabs-container">
-                <div class="tabs-nav">
-                    <button class="tab-btn active" data-tab="climate">Clima</button>
-                    <button class="tab-btn" data-tab="water">Água</button>
-                    <button class="tab-btn" data-tab="waste">Resíduos</button>
-                    <button class="tab-btn" data-tab="biodiversity">Biodiversidade</button>
+            <!-- Introdução -->
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <h2>Entendendo o Impacto</h2>
+                    <p class="lead">A tecnologia moderna traz inúmeros benefícios, mas também gera consequências
+                        ambientais significativas que precisam ser compreendidas e mitigadas.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit
+                        arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
+                        Ut in nulla enim.</p>
+                    <p>Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat
+                        nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio.</p>
                 </div>
-
-                <div class="tabs-content">
-                    <div class="tab-panel active" id="climate-panel">
-                        <div class="impact-card climate">
-                            <i class="bi bi-thermometer-sun"></i>
-                            <h3>Mudanças Climáticas</h3>
-                            <p>Impacto das tecnologias nas emissões de gases de efeito estufa:</p>
-                            <ul>
-                                <li>Emissões de data centers</li>
-                                <li>Pegada de carbono de dispositivos</li>
-                                <li>Consumo energético</li>
-                                <li>Potencial de mitigação</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="tab-panel" id="water-panel">
-                        <div class="impact-card water">
-                            <i class="bi bi-droplet"></i>
-                            <h3>Recursos Hídricos</h3>
-                            <p>Impacto no consumo e qualidade da água:</p>
-                            <ul>
-                                <li>Uso de água em fabricação</li>
-                                <li>Contaminação por metais pesados</li>
-                                <li>Tecnologias de tratamento</li>
-                                <li>Monitoramento inteligente</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="tab-panel" id="waste-panel">
-                        <div class="impact-card waste">
-                            <i class="bi bi-trash"></i>
-                            <h3>Resíduos Eletrônicos</h3>
-                            <p>Desafios e soluções para o lixo eletrônico:</p>
-                            <ul>
-                                <li>Volume global de e-waste</li>
-                                <li>Materiais tóxicos</li>
-                                <li>Ciclo de vida de produtos</li>
-                                <li>Logística reversa</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="tab-panel" id="biodiversity-panel">
-                        <div class="impact-card biodiversity">
-                            <i class="bi bi-tree"></i>
-                            <h3>Biodiversidade</h3>
-                            <p>Efeitos na fauna e flora:</p>
-                            <ul>
-                                <li>Extração de matérias-primas</li>
-                                <li>Poluição eletrônica</li>
-                                <li>Tecnologias de conservação</li>
-                                <li>Monitoramento de ecossistemas</li>
-                            </ul>
-                        </div>
+                <div class="col-md-6">
+                    <div class="image-placeholder">
+                        <i class="bi bi-image fs-1"></i>
+                        <span class="ms-2">Imagem de Impacto Ambiental</span>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Data Section -->
-        <section class="data-section">
-            <h2>Dados e Estatísticas</h2>
-            <div class="data-grid">
-                <div class="data-card">
-                    <h3>Emissões Globais</h3>
-                    <p>O setor de tecnologia é responsável por:</p>
-                    <ul>
-                        <li>2% das emissões globais de CO2</li>
-                        <li>4% do consumo mundial de energia</li>
-                        <li>50 milhões de toneladas de lixo eletrônico/ano</li>
-                    </ul>
+            <!-- Estatísticas em destaque -->
+            <div class="row mb-5">
+                <div class="col-md-3">
+                    <div class="stat-box">
+                        <div class="stat-number">2%</div>
+                        <div class="stat-label">das emissões globais de CO2</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-box">
+                        <div class="stat-number">4%</div>
+                        <div class="stat-label">do consumo mundial de energia</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-box">
+                        <div class="stat-number">50M</div>
+                        <div class="stat-label">toneladas de lixo eletrônico/ano</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-box">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">dos resíduos não reciclados</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citação -->
+            <div class="quote-box">
+                <p>"A tecnologia deve ser nossa aliada na preservação ambiental, não nossa inimiga. Precisamos repensar
+                    como desenvolvemos e utilizamos as ferramentas tecnológicas para garantir um futuro sustentável."
+                </p>
+                <div class="quote-author">— Dr. Maria Silva, Especialista em Sustentabilidade</div>
+            </div>
+
+            <!-- Categorias de Impacto -->
+            <h2 class="text-center mb-4">Categorias de Impacto Ambiental</h2>
+            <div class="impact-grid">
+                <div class="impact-category climate">
+                    <div class="impact-header">
+                        <h3>Mudanças Climáticas</h3>
+                    </div>
+                    <div class="impact-body">
+                        <div class="text-center">
+                            <i class="bi bi-thermometer-sun impact-icon"></i>
+                        </div>
+                        <p>Impacto das tecnologias nas emissões de gases de efeito estufa:</p>
+                        <ul>
+                            <li>Emissões de data centers</li>
+                            <li>Pegada de carbono de dispositivos</li>
+                            <li>Consumo energético</li>
+                            <li>Potencial de mitigação</li>
+                        </ul>
+                    </div>
                 </div>
 
+                <div class="impact-category water">
+                    <div class="impact-header">
+                        <h3>Recursos Hídricos</h3>
+                    </div>
+                    <div class="impact-body">
+                        <div class="text-center">
+                            <i class="bi bi-droplet impact-icon"></i>
+                        </div>
+                        <p>Impacto no consumo e qualidade da água:</p>
+                        <ul>
+                            <li>Uso de água em fabricação</li>
+                            <li>Contaminação por metais pesados</li>
+                            <li>Tecnologias de tratamento</li>
+                            <li>Monitoramento inteligente</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="impact-category waste">
+                    <div class="impact-header">
+                        <h3>Resíduos Eletrônicos</h3>
+                    </div>
+                    <div class="impact-body">
+                        <div class="text-center">
+                            <i class="bi bi-trash impact-icon"></i>
+                        </div>
+                        <p>Desafios e soluções para o lixo eletrônico:</p>
+                        <ul>
+                            <li>Volume global de e-waste</li>
+                            <li>Materiais tóxicos</li>
+                            <li>Ciclo de vida de produtos</li>
+                            <li>Logística reversa</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="impact-category biodiversity">
+                    <div class="impact-header">
+                        <h3>Biodiversidade</h3>
+                    </div>
+                    <div class="impact-body">
+                        <div class="text-center">
+                            <i class="bi bi-tree impact-icon"></i>
+                        </div>
+                        <p>Efeitos na fauna e flora:</p>
+                        <ul>
+                            <li>Extração de matérias-primas</li>
+                            <li>Poluição eletrônica</li>
+                            <li>Tecnologias de conservação</li>
+                            <li>Monitoramento de ecossistemas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dados e Projeções -->
+            <h2>Dados e Projeções</h2>
+            <div class="data-container">
                 <div class="data-card">
                     <h3>Consumo de Recursos</h3>
                     <p>Impacto no uso de recursos naturais:</p>
@@ -222,8 +459,13 @@
                     </ul>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">
+        <i class="bi bi-moon" aria-hidden="true"></i>
+    </button>
 
     <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -236,9 +478,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../js/layout.js"></script>
 
-    <!-- Service Worker Registration -->
     <script>
-
         // Theme toggle functionality
         document.addEventListener('DOMContentLoaded', function () {
             const themeToggle = document.querySelector('.theme-toggle');
@@ -285,11 +525,6 @@
             }
         });
     </script>
-
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">
-        <i class="bi bi-moon" aria-hidden="true"></i>
-    </button>
 </body>
 
 </html>

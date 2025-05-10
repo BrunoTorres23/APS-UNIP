@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const themeToggle = document.createElement('button');
     themeToggle.className = 'theme-toggle';
-    themeToggle.innerHTML = savedTheme === 'dark' ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon-stars"></i>';
+    themeToggle.innerHTML = savedTheme === 'dark' ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon"></i>';
     themeToggle.setAttribute('aria-label', 'Alternar tema');
     document.body.appendChild(themeToggle);
 
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
-      themeToggle.innerHTML = newTheme === 'dark' ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon-stars"></i>';
+      themeToggle.innerHTML = newTheme === 'dark' ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon"></i>';
     });
   }
 

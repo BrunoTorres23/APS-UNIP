@@ -26,11 +26,74 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <style>
+        /* Correções para o modo dark */
+        [data-theme="dark"] .card {
+            background-color: var(--card-bg);
+            border-color: var(--border-color);
+        }
+
+        [data-theme="dark"] .card-body {
+            color: var(--text-color);
+        }
+
+        [data-theme="dark"] .card h3,
+        [data-theme="dark"] .card .card-title {
+            color: var(--text-color);
+        }
+
+        [data-theme="dark"] .card p,
+        [data-theme="dark"] .card ul li {
+            color: var(--text-secondary);
+        }
+
+        [data-theme="dark"] .bg-light {
+            background-color: var(--card-bg) !important;
+        }
+
+        [data-theme="dark"] .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        [data-theme="dark"] .text-success {
+            color: var(--accent-color) !important;
+        }
+
+        [data-theme="dark"] .text-info {
+            color: var(--secondary-color) !important;
+        }
+
+        [data-theme="dark"] .text-warning {
+            color: #ffc107 !important;
+        }
+
+        /* Espaços para conteúdo adicional */
+        .content-section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .image-placeholder {
+            background-color: var(--light-bg);
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        [data-theme="dark"] .image-placeholder {
+            background-color: var(--dark-bg);
+        }
+    </style>
 </head>
 
 <body>
-
     <div class="bg-wrapper lazy-background" style="--bg-image: url('../images/direito-e-sustentabilidade.jpg');"></div>
+    <!-- Sidebar -->
     <nav class="sidebar" role="navigation" aria-label="Menu principal">
         <div class="sidebar-header">
             <i class="bi bi-leaf-fill" aria-hidden="true"></i>
@@ -72,6 +135,20 @@
                 </a>
             </li>
             <li role="none">
+                <a href="./noticias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Notícias" role="menuitem">
+                    <i class="bi bi-newspaper" aria-hidden="true"></i>
+                    <span>Notícias & Eventos</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./biblioteca.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Biblioteca" role="menuitem">
+                    <i class="bi bi-stack" aria-hidden="true"></i>
+                    <span>Biblioteca</span>
+                </a>
+            </li>
+            <li role="none">
                 <a href="./contato.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
                     title="Contato" role="menuitem">
                     <i class="bi bi-envelope" aria-hidden="true"></i>
@@ -109,80 +186,187 @@
             </ol>
         </nav>
 
-        <section class="feature-section">
-            <h2 class="section-title">Tecnologias Verdes</h2>
-
-            <div class="masonry-grid">
-                <div class="feature-card">
-                    <i class="bi bi-sun"></i>
-                    <h3>Energias Renováveis</h3>
-                    <p>Desenvolvimento de tecnologias para geração de energia limpa, incluindo:</p>
-                    <ul>
-                        <li>Painéis solares de alta eficiência</li>
-                        <li>Turbinas eólicas otimizadas</li>
-                        <li>Sistemas de energia hidrelétrica sustentável</li>
-                        <li>Biomassa e bioenergia</li>
-                    </ul>
+        <section class="container">
+            <div class="row mb-5">
+                <div class="col-md-8">
+                    <h2>O Futuro é Verde</h2>
+                    <p class="lead">As tecnologias verdes representam uma revolução na forma como interagimos com o
+                        meio ambiente, combinando inovação e sustentabilidade para criar soluções que minimizam o
+                        impacto
+                        ambiental.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit
+                        arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
+                        Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.</p>
                 </div>
-
-                <div class="feature-card highlight">
-                    <i class="bi bi-recycle"></i>
-                    <h3>Reciclagem Tecnológica</h3>
-                    <p>Inovações no processo de reciclagem de equipamentos eletrônicos:</p>
-                    <ul>
-                        <li>Métodos de desmontagem segura</li>
-                        <li>Recuperação de materiais valiosos</li>
-                        <li>Tratamento de resíduos tóxicos</li>
-                        <li>Economia circular na tecnologia</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <i class="bi bi-cpu"></i>
-                    <h3>Computação Verde</h3>
-                    <p>Estratégias para reduzir o impacto ambiental da computação:</p>
-                    <ul>
-                        <li>Servidores de baixo consumo</li>
-                        <li>Virtualização e cloud computing</li>
-                        <li>Algoritmos eficientes</li>
-                        <li>Refrigeração natural de data centers</li>
-                    </ul>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="h5">Impacto Positivo</h3>
+                            <ul>
+                                <li>Redução de 70% nas emissões</li>
+                                <li>Economia de 40% de energia</li>
+                                <li>Preservação de recursos naturais</li>
+                                <li>Melhoria da qualidade do ar</li>
+                                <li>Redução da pegada de carbono</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <section class="case-section">
-            <h2 class="section-title">Casos de Sucesso</h2>
-            <div class="horizontal-scroll-container">
-                <div class="case-card">
-                    <h3>Parque Solar</h3>
-                    <p>Implementação de um parque solar com tecnologia de ponta, gerando energia limpa para 10.000
-                        residências.</p>
-                    <ul>
-                        <li>Redução de 5.000 toneladas de CO2/ano</li>
-                        <li>Geração de 20MW de energia</li>
-                        <li>Integração com rede inteligente</li>
-                    </ul>
+            <!-- Seção para imagem em destaque -->
+            <div class="content-section">
+                <div class="image-placeholder">
+                    <i class="bi bi-image fs-1"></i>
+                    <span class="ms-2">Espaço para imagem em destaque</span>
+                </div>
+                <h2>Visão Geral das Tecnologias Verdes</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu
+                    sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in
+                    nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum
+                    feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio.
+                </p>
+                <p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a
+                    porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus
+                    vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-sun fs-1 text-warning"></i>
+                            </div>
+                            <h3 class="card-title h4">Energias Renováveis</h3>
+                            <p>Desenvolvimento de tecnologias para geração de energia limpa:</p>
+                            <ul>
+                                <li>Painéis solares de alta eficiência</li>
+                                <li>Turbinas eólicas otimizadas</li>
+                                <li>Sistemas hidrelétricos sustentáveis</li>
+                                <li>Energia geotérmica</li>
+                                <li>Biomassa e biocombustíveis</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-outline-primary">Saiba mais</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="case-card">
-                    <h3>Centro de Reciclagem</h3>
-                    <p>Centro especializado em reciclagem de eletrônicos com tecnologia de separação automática.</p>
-                    <ul>
-                        <li>Reciclagem de 1.000 toneladas/ano</li>
-                        <li>Recuperação de 95% dos materiais</li>
-                        <li>Geração de empregos locais</li>
-                    </ul>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-recycle fs-1 text-success"></i>
+                            </div>
+                            <h3 class="card-title h4">Reciclagem Tecnológica</h3>
+                            <p>Processos inovadores para reaproveitamento de materiais:</p>
+                            <ul>
+                                <li>Recuperação de metais preciosos</li>
+                                <li>Remanufatura de componentes</li>
+                                <li>Redução do lixo eletrônico</li>
+                                <li>Economia circular</li>
+                                <li>Logística reversa</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-outline-primary">Saiba mais</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="case-card">
-                    <h3>Sistema de Irrigação</h3>
-                    <p>Implementação de sistema inteligente de irrigação em área agrícola.</p>
-                    <ul>
-                        <li>Economia de 40% de água</li>
-                        <li>Aumento de 25% na produtividade</li>
-                        <li>Monitoramento em tempo real</li>
-                    </ul>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-cpu fs-1 text-info"></i>
+                            </div>
+                            <h3 class="card-title h4">Computação Verde</h3>
+                            <p>Tecnologias computacionais de baixo impacto ambiental:</p>
+                            <ul>
+                                <li>Servidores de baixo consumo</li>
+                                <li>Algoritmos eficientes</li>
+                                <li>Virtualização e cloud computing</li>
+                                <li>Data centers sustentáveis</li>
+                                <li>Refrigeração natural</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-outline-primary">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção para conteúdo adicional com imagens lado a lado -->
+            <div class="content-section mt-5">
+                <h2>Estudos de Caso</h2>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="image-placeholder">
+                            <i class="bi bi-image fs-1"></i>
+                            <span class="ms-2">Imagem do Estudo de Caso 1</span>
+                        </div>
+                        <h3>Implementação em Grande Escala</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus
+                            hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend
+                            nibh porttitor.</p>
+                        <p>Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
+                            Suspendisse dictum feugiat nisl ut dapibus.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="image-placeholder">
+                            <i class="bi bi-image fs-1"></i>
+                            <span class="ms-2">Imagem do Estudo de Caso 2</span>
+                        </div>
+                        <h3>Resultados Comprovados</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus
+                            hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend
+                            nibh porttitor.</p>
+                        <p>Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
+                            Suspendisse dictum feugiat nisl ut dapibus.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <h2>Últimas Inovações</h2>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-battery-charging fs-1 text-primary p-3"></i>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h3 class="card-title h5">Baterias de Estado Sólido</h3>
+                                        <p class="card-text">Nova geração de baterias com maior capacidade e menor
+                                            impacto ambiental.</p>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            Nullam in dui mauris.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-building fs-1 text-primary p-3"></i>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h3 class="card-title h5">Edifícios Inteligentes</h3>
+                                        <p class="card-text">Construções que otimizam o uso de recursos e reduzem o
+                                            consumo energético.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -190,64 +374,11 @@
     <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-
     <link rel="preload" href="../images/direito-e-sustentabilidade.jpg" as="image">
 
     <!-- Bootstrap (loaded asynchronously) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-
-    <!-- Theme toggle functionality -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const themeToggle = document.querySelector('.theme-toggle');
-            if (themeToggle) {
-                // Check for saved theme preference or use system preference
-                const savedTheme = localStorage.getItem('theme');
-                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-                // Set initial theme
-                if (savedTheme) {
-                    document.documentElement.setAttribute('data-theme', savedTheme);
-                    updateThemeIcon(savedTheme, themeToggle);
-                } else if (prefersDarkScheme.matches) {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    updateThemeIcon('dark', themeToggle);
-                } else {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                    updateThemeIcon('light', themeToggle);
-                }
-
-                // Add click event listener
-                themeToggle.addEventListener('click', function () {
-                    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-                    document.documentElement.setAttribute('data-theme', newTheme);
-                    localStorage.setItem('theme', newTheme);
-                    updateThemeIcon(newTheme, themeToggle);
-                });
-            }
-
-            // Update theme icon based on current theme
-            function updateThemeIcon(theme, button) {
-                const icon = button.querySelector('i');
-                if (icon) {
-                    if (theme === 'light') {
-                        icon.className = 'bi bi-moon';
-                        button.setAttribute('title', 'Mudar para tema escuro');
-                    } else {
-                        icon.className = 'bi bi-sun';
-                        button.setAttribute('title', 'Mudar para tema claro');
-                    }
-                }
-            }
-        });
-    </script>
-
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">
-        <i class="bi bi-moon" aria-hidden="true"></i>
-    </button>
+    <script src="../js/optimized.js" defer></script>
 </body>
 
 </html>
