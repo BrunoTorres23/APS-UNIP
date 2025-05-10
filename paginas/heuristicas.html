@@ -242,58 +242,94 @@
             </div>
         </section>
 
-        <!-- Site Analysis Section -->
-        <section class="site-analysis">
+        <!-- Heuristics Cards -->
+        <section class="heuristics-cards">
             <div class="container">
-                <h2 class="text-center mb-4">Análise Heurística do Site</h2>
+                <h2 class="text-center mb-5">3 Heurísticas de Nielsen - IHC</h2>
 
-                <div class="analysis-grid">
-                    <div class="analysis-item">
-                        <div class="analysis-header">
-                            <i class="bi bi-speedometer"></i>
-                            <h3>Velocidade de Carregamento</h3>
+                <div class="card-container">
+                    <!-- Heurística 1 -->
+                    <div class="heuristic-card">
+                        <div class="card-icon">
+                            <i class="bi bi-lightning-charge-fill"></i>
                         </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85"
-                                aria-valuemin="0" aria-valuemax="100">85%</div>
+                        <img src="https://images.unsplash.com/photo-1548611716-ad782502c9d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Eficiência Energética" class="heuristic-image">
+                        <h3>Eficiência Energética</h3>
+                        <p>
+                            Otimização do consumo de energia através de código eficiente e carregamento sob demanda.
+                        </p>
+                        <div class="card-details">
+                            <h4>Como aplicamos:</h4>
+                            <ul>
+                                <li>Lazy loading de imagens e recursos</li>
+                                <li>CSS e JavaScript minificados</li>
+                                <li>Carregamento assíncrono de recursos não-críticos</li>
+                                <li>Uso de CSS em vez de JavaScript quando possível</li>
+                            </ul>
+                            <div class="implementation-example">
+                                <h5>Exemplo de implementação:</h5>
+                                <code>
+                                            &lt;img src="..." loading="lazy" alt="..."&gt;
+                                        </code>
+                            </div>
                         </div>
-                        <p>Otimização de recursos e carregamento assíncrono</p>
                     </div>
 
-                    <div class="analysis-item">
-                        <div class="analysis-header">
-                            <i class="bi bi-battery-charging"></i>
-                            <h3>Eficiência Energética</h3>
+                    <!-- Heurística 2 -->
+                    <div class="heuristic-card">
+                        <div class="card-icon">
+                            <i class="bi bi-universal-access"></i>
                         </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 78%;" aria-valuenow="78"
-                                aria-valuemin="0" aria-valuemax="100">78%</div>
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Acessibilidade Universal" class="heuristic-image">
+                        <h3>Acessibilidade Universal</h3>
+                        <p>
+                            Design inclusivo que garante acesso a todos os usuários, independente de suas capacidades.
+                        </p>
+                        <div class="card-details">
+                            <h4>Como aplicamos:</h4>
+                            <ul>
+                                <li>Contraste adequado entre texto e fundo</li>
+                                <li>Estrutura semântica com ARIA roles</li>
+                                <li>Suporte a navegação por teclado</li>
+                                <li>Textos alternativos para imagens</li>
+                            </ul>
+                            <div class="implementation-example">
+                                <h5>Exemplo de implementação:</h5>
+                                <code>
+                                            &lt;nav role="navigation" aria-label="Menu principal"&gt;
+                                        </code>
+                            </div>
                         </div>
-                        <p>Redução do consumo de CPU e bateria</p>
                     </div>
 
-                    <div class="analysis-item">
-                        <div class="analysis-header">
-                            <i class="bi bi-eye"></i>
-                            <h3>Acessibilidade</h3>
+                    <!-- Heurística 3 -->
+                    <div class="heuristic-card">
+                        <div class="card-icon">
+                            <i class="bi bi-speedometer2"></i>
                         </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 92%;" aria-valuenow="92"
-                                aria-valuemin="0" aria-valuemax="100">92%</div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Performance Sustentável" class="heuristic-image">
+                        <h3>Performance Sustentável</h3>
+                        <p>
+                            Otimização de recursos para reduzir o consumo de dados e processamento.
+                        </p>
+                        <div class="card-details">
+                            <h4>Como aplicamos:</h4>
+                            <ul>
+                                <li>Compressão de imagens e recursos</li>
+                                <li>Uso de formatos modernos de imagem</li>
+                                <li>Preload de recursos críticos</li>
+                                <li>Redução de dependências externas</li>
+                            </ul>
+                            <div class="implementation-example">
+                                <h5>Exemplo de implementação:</h5>
+                                <code>
+                                            &lt;link rel="preload" href="..." as="script"&gt;
+                                        </code>
+                            </div>
                         </div>
-                        <p>Conformidade com WCAG 2.1 AA</p>
-                    </div>
-
-                    <div class="analysis-item">
-                        <div class="analysis-header">
-                            <i class="bi bi-cloud-download"></i>
-                            <h3>Tamanho Total</h3>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 88%;" aria-valuenow="88"
-                                aria-valuemin="0" aria-valuemax="100">88%</div>
-                        </div>
-                        <p>Redução de 45% no tamanho dos recursos</p>
                     </div>
                 </div>
             </div>

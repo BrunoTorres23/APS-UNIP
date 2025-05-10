@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = entry.target;
             if (img.tagName.toLowerCase() === 'img') {
               if (img.dataset.src) {
-                img.src = img.dataset.src;
-                if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+                img.src = ''; // Removed image source
+                if (img.dataset.srcset) img.srcset = '';
               }
               img.classList.add('loaded');
             } else {
@@ -47,10 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       // Fallback simples
       lazyImages.forEach(img => {
-        if (img.dataset.src) img.src = img.dataset.src;
+        if (img.dataset.src) img.src = ''; // Removed image source
         img.classList.add('loaded');
       });
-      lazyBackgrounds.forEach(bg => bg.classList.add('visible'));
     }
   }
 

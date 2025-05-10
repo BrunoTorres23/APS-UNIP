@@ -197,8 +197,12 @@
 }
 
 .theme-toggle:hover {
+  color: white !important;
   background: rgba(74, 144, 226, 0.9);
   transform: scale(1.05);
+}
+.theme-toggle:hover i {
+  color: white !important; /* Force white color on hover */
 }
 
 .theme-toggle:focus {
@@ -218,6 +222,10 @@
 
 [data-theme="dark"] .theme-toggle:hover {
   background: rgba(44, 159, 171, 0.9);
+}
+
+[data-theme="dark"] .theme-toggle:hover i {
+  color: white !important; /* Force white color on hover in dark mode too */
 }
 
 [data-theme="dark"] .theme-toggle i {
@@ -349,10 +357,7 @@ body {
   background-color: var(--light-bg);
   background-image: var(
     --bg-image,
-    var(
-      --bg-main-image,
-      url("images/pexels-christian-fohrer-894172-2912103.jpg")
-    )
+    var(--bg-main-image, none /* Removed URL */)
   );
   background-repeat: no-repeat;
   background-position: center center;
@@ -392,7 +397,7 @@ header {
       rgba(27, 75, 130, 0.9),
       rgba(74, 144, 226, 0.9)
     ),
-    var(--header-bg-image, url("images/direito-e-sustentabilidade.jpg"));
+    none;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -502,7 +507,7 @@ section {
       rgba(255, 255, 255, 0.95),
       rgba(255, 255, 255, 0.95)
     ),
-    var(--metodologia-bg-image, url("images/direito-e-sustentabilidade.jpg"));
+    none;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -627,7 +632,7 @@ section h2::after {
       rgba(27, 75, 130, 0.85),
       rgba(74, 144, 226, 0.85)
     ),
-    var(--section-bg-image, url("images/pexels-pok-rie-33563-3829454.jpg"));
+    none;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -677,24 +682,15 @@ section h2::after {
 }
 
 .impact-card.climate::before {
-  background-image: var(
-    --climate-bg-image,
-    url("images/istockphoto-1414916304-612x612.jpg")
-  );
+  background-image: var(--climate-bg-image, none /* Removed URL */);
 }
 
 .impact-card.water::before {
-  background-image: var(
-    --water-bg-image,
-    url("images/direito-e-sustentabilidade.jpg")
-  );
+  background-image: var(--water-bg-image, none /* Removed URL */);
 }
 
 .impact-card.waste::before {
-  background-image: var(
-    --waste-bg-image,
-    url("images/pexels-pok-rie-33563-3829454.jpg")
-  );
+  background-image: var(--waste-bg-image, none /* Removed URL */);
 }
 
 .impact-card > * {
@@ -1589,12 +1585,9 @@ section.leaf-section::before {
   background-image: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M20 0c0 0 0 20 0 20s-20 0-20 0 0-20 0-20 20 0 20 0z" fill="%234A90E2" fill-opacity="0.03"/><path d="M20 20c0 0 0 20 0 20s-20 0-20 0 0-20 0-20 20 0 20 0z" fill="%234A90E2" fill-opacity="0.03"/></svg>');
 }
 
-section.water-section::before {
-  background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M30 0c0 0 0 30 0 30s-30 0-30 0 0-30 0-30 30 0 30 0z" fill="%234A90E2" fill-opacity="0.05"/><path d="M30 15c0 0 0 15 0 15s-15 0-15 0 0-15 0-15 15 0 15 0z" fill="%234A90E2" fill-opacity="0.03"/></svg>');
-}
-
+section.water-section::before,
 section.cloud-section::before {
-  background-image: url('data:image/svg+xml,<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><path d="M40 0c0 0 0 40 0 40s-40 0-40 0 0-40 0-40 40 0 40 0z" fill="%234A90E2" fill-opacity="0.03"/><path d="M40 20c0 0 0 20 0 20s-20 0-20 0 0-20 0-20 20 0 20 0z" fill="%234A90E2" fill-opacity="0.02"/></svg>');
+  background-image: none;
 }
 
 /* Enhanced hover effects for cards */
@@ -2342,4 +2335,36 @@ img.lazy.loaded {
 
 [data-theme="dark"] .contact-info i {
   color: var(--accent-color);
+}
+
+/* Implementation section text color fix for light mode */
+.implementation-card {
+  color: var(--text-color);
+}
+
+.implementation-card h3 {
+  color: var(--primary-color);
+}
+
+.implementation-card p,
+.implementation-card ul li {
+  color: var(--text-secondary);
+}
+
+/* Ensure text is visible in both light and dark modes */
+.implementation-card ul li::before {
+  color: var(--accent-color);
+}
+
+/* Make sure all text elements have proper contrast in light mode */
+section h2,
+section h3,
+section p,
+section li {
+  color: var(--text-color);
+}
+
+section p,
+section li {
+  color: var(--text-secondary);
 }

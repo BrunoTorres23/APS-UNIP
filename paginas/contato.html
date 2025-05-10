@@ -119,10 +119,12 @@
                     <div class="col-12">
                         <div class="contact-form">
                             <h2>Envie sua Mensagem</h2>
-                            <form id="contactForm" class="needs-validation" novalidate>
+                            <form id="contactForm" class="needs-validation"
+                                action="https://formsubmit.co/josehenriquefnbr@gmail.com" method="POST" novalidate>
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Nome completo</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Seu nome" required>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Seu nome"
+                                        required>
                                     <div class="invalid-feedback">
                                         Por favor, informe seu nome.
                                     </div>
@@ -130,7 +132,7 @@
 
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email"
+                                    <input type="email" class="form-control" name="email" id="email"
                                         placeholder="seu.email@exemplo.com" required>
                                     <div class="invalid-feedback">
                                         Por favor, informe um email válido.
@@ -139,7 +141,7 @@
 
                                 <div class="mb-3">
                                     <label for="subject" class="form-label">Assunto</label>
-                                    <select class="form-select form-control" id="subject" required>
+                                    <select class="form-select form-control" id="subject" name="subject" required>
                                         <option value="" selected disabled>Selecione um assunto</option>
                                         <option value="duvida">Dúvida</option>
                                         <option value="sugestao">Sugestão</option>
@@ -153,7 +155,7 @@
 
                                 <div class="mb-3">
                                     <label for="message" class="form-label">Mensagem</label>
-                                    <textarea class="form-control" id="message" rows="5"
+                                    <textarea class="form-control" id="message" name="message" rows="5"
                                         placeholder="Digite sua mensagem aqui..." required></textarea>
                                     <div class="invalid-feedback">
                                         Por favor, digite sua mensagem.
@@ -162,7 +164,8 @@
 
                                 <div class="mb-3 form-check">
                                     <input type="checkbox" class="form-check-input" id="privacy" required>
-                                    <label class="form-check-label" for="privacy">Concordo com a <a href="#">política de
+                                    <label class="form-check-label" for="privacy">Concordo com a <a href="#"
+                                            class="privacy-link">política de
                                             privacidade</a></label>
                                     <div class="invalid-feedback">
                                         Você deve concordar com a política de privacidade.
@@ -200,10 +203,6 @@
                         if (form.checkValidity() === false) {
                             event.preventDefault();
                             event.stopPropagation();
-                        } else {
-                            event.preventDefault();
-                            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-                            form.reset();
                         }
                         form.classList.add('was-validated');
                     }, false);
