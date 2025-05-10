@@ -168,103 +168,60 @@
 
         <section class="additional-section">
             <h2>Recursos Adicionais</h2>
-            <div class="additional-grid">
-                <div class="additional-card">
-                    <h3>Documentários</h3>
-                    <ul>
-                        <li>Uma Verdade Inconveniente (2006)</li>
-                        <li>Before the Flood (2016)</li>
-                        <li>Our Planet (2019)</li>
-                        <li>Breaking Boundaries (2021)</li>
-                    </ul>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4">
+                    <div class="additional-card text-center">
+                        <h3>Documentários</h3>
+                        <ul class="list-unstyled">
+                            <li>Uma Verdade Inconveniente (2006)</li>
+                            <li>Before the Flood (2016)</li>
+                            <li>Our Planet (2019)</li>
+                            <li>Breaking Boundaries (2021)</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="additional-card">
-                    <h3>Organizações</h3>
-                    <ul>
-                        <li>Greenpeace</li>
-                        <li>Instituto Akatu</li>
-                        <li>SOS Mata Atlântica</li>
-                        <li>Instituto Terra</li>
-                    </ul>
+                <div class="col-md-4 mb-4">
+                    <div class="additional-card text-center">
+                        <h3>Organizações</h3>
+                        <ul class="list-unstyled">
+                            <li>Greenpeace</li>
+                            <li>Instituto Akatu</li>
+                            <li>SOS Mata Atlântica</li>
+                            <li>Instituto Terra</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="additional-card">
-                    <h3>Eventos</h3>
-                    <ul>
-                        <li>Conferência das Nações Unidas sobre Mudanças Climáticas</li>
-                        <li>Fórum Mundial da Água</li>
-                        <li>Conferência Rio+30</li>
-                        <li>Fórum de Economia Verde</li>
-                    </ul>
+                <div class="col-md-4 mb-4">
+                    <div class="additional-card text-center">
+                        <h3>Eventos</h3>
+                        <ul class="list-unstyled">
+                            <li>Conferência das Nações Unidas sobre Mudanças Climáticas</li>
+                            <li>Fórum Mundial da Água</li>
+                            <li>Conferência Rio+30</li>
+                            <li>Fórum de Economia Verde</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <div class="sidebar-overlay" aria-hidden="true"></div>
-    <!-- Resource Hints for Performance -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-
-    <!-- Preload Critical Resources -->
-    <!-- <link rel="preload" href="../images/direito-e-sustentabilidade.jpg" as="image"> -->
-
-    <!-- Bootstrap (loaded asynchronously) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-
-    <!-- Theme toggle functionality -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const themeToggle = document.querySelector('.theme-toggle');
-            if (themeToggle) {
-                // Check for saved theme preference or use system preference
-                const savedTheme = localStorage.getItem('theme');
-                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-                // Set initial theme
-                if (savedTheme) {
-                    document.documentElement.setAttribute('data-theme', savedTheme);
-                    updateThemeIcon(savedTheme, themeToggle);
-                } else if (prefersDarkScheme.matches) {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    updateThemeIcon('dark', themeToggle);
-                } else {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                    updateThemeIcon('light', themeToggle);
-                }
-
-                // Add click event listener
-                themeToggle.addEventListener('click', function () {
-                    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-                    document.documentElement.setAttribute('data-theme', newTheme);
-                    localStorage.setItem('theme', newTheme);
-                    updateThemeIcon(newTheme, themeToggle);
-                });
-            }
-
-            // Update theme icon based on current theme
-            function updateThemeIcon(theme, button) {
-                const icon = button.querySelector('i');
-                if (icon) {
-                    if (theme === 'light') {
-                        icon.className = 'bi bi-moon';
-                        button.setAttribute('title', 'Mudar para tema escuro');
-                    } else {
-                        icon.className = 'bi bi-sun';
-                        button.setAttribute('title', 'Mudar para tema claro');
-                    }
-                }
-            }
-        });
-    </script>
-
     <!-- Theme Toggle Button -->
     <button class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">
         <i class="bi bi-moon" aria-hidden="true"></i>
     </button>
+    <!-- Resource Hints for Performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Bootstrap (loaded asynchronously) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <script src="../js/optimized.js" defer></script>
+    <script src="../js/theme.js"></script>
 </body>
 
 </html>

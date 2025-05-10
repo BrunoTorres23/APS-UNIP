@@ -2371,3 +2371,17 @@ img.lazy.loaded {
 [data-theme="dark"] .privacy-link:hover {
   color: var(--accent-hover);
 }
+
+/* Corrigindo cores dos recursos adicionais */
+.additional-card ul li {
+  color: var(--text-color);
+}
+
+.additional-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .additional-card ul li {
+  color: var(--text-secondary);
+}
