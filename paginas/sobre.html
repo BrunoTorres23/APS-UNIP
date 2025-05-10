@@ -4,22 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Referências - Projeto Acadêmico</title>
-    <meta name="description" content="Projeto acadêmico sobre referências bibliográficas em sustentabilidade">
+    <title>Sobre - Projeto Acadêmico</title>
+    <meta name="description" content="Conheça o autor do projeto acadêmico sobre tecnologia e sustentabilidade">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Non-critical CSS loaded asynchronously -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" media="print"
-        onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    </noscript>
-    <!-- Critical CSS -->
-    <link rel="stylesheet" href="../css/style.css" media="all">
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/sobre.css">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
@@ -29,8 +23,8 @@
 </head>
 
 <body>
-
     <div class="bg-wrapper lazy-background" style="--bg-image: url('../images/direito-e-sustentabilidade.jpg');"></div>
+
     <!-- Sidebar -->
     <nav class="sidebar" role="navigation" aria-label="Menu principal">
         <div class="sidebar-header">
@@ -67,7 +61,7 @@
             </li>
             <li role="none">
                 <a href="./heuristicas.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
-                    title="Heurísticas" role="menuitem">
+                    title="Heurísticas" role="menuitem" aria-current="page">
                     <i class="bi bi-check2-square" aria-hidden="true"></i>
                     <span>Heurísticas</span>
                 </a>
@@ -94,124 +88,87 @@
                 </a>
             </li>
             <li role="none">
-                <a href="./referencias.html" class="nav-link active" data-bs-toggle="tooltip" data-bs-placement="right"
-                    title="Referências" role="menuitem" aria-current="page">
+                <a href="./referencias.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Referências" role="menuitem">
                     <i class="bi bi-book" aria-hidden="true"></i>
                     <span>Referências</span>
                 </a>
             </li>
             <li role="none">
-                <a href="./sobre.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Sobre"
-                    role="menuitem" aria-current="page">
+                <a href="./sobre.html" class="nav-link active" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Sobre" role="menuitem" aria-current="page">
                     <i class="bi bi-person" aria-hidden="true"></i>
                     <span>Sobre</span>
                 </a>
             </li>
         </ul>
     </nav>
+    <div class="sidebar-overlay" aria-hidden="true"></div>
 
     <main id="content" role="main">
-        <header role="banner">
+        <!-- Hero Section -->
+        <header class="blog-header" role="banner">
             <div class="container">
-                <button class="menu-toggle d-md-none" aria-label="Abrir menu" aria-expanded="false"
-                    aria-controls="sidebar">
-                    <i class="bi bi-list" aria-hidden="true"></i>
-                </button>
-                <h1>Referências</h1>
-                <p>Bibliografia e fontes consultadas</p>
+                <h1>Sobre o Autor</h1>
+                <p class="lead">Conheça um pouco sobre quem está por trás deste projeto</p>
             </div>
         </header>
 
+        <!-- Breadcrumb -->
         <nav aria-label="Navegação estrutural">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Início</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Referências</li>
+                <li class="breadcrumb-item active" aria-current="page">Sobre</li>
             </ol>
         </nav>
 
-        <section class="references-section">
-            <div class="reference-card">
-                <i class="bi bi-book"></i>
-                <h3>Livros</h3>
-                <ul>
-                    <li>ALMEIDA, F. Desenvolvimento Sustentável: Desafios e Perspectivas. São Paulo: Atlas, 2020.</li>
-                    <li>BRUNDTLAND, G. Nosso Futuro Comum. Rio de Janeiro: FGV, 2019.</li>
-                    <li>CARSON, R. Primavera Silenciosa. São Paulo: Gaia, 2021.</li>
-                    <li>LEFF, E. Saber Ambiental. Petrópolis: Vozes, 2022.</li>
-                </ul>
-            </div>
-
-            <div class="reference-card">
-                <i class="bi bi-file-text"></i>
-                <h3>Artigos Científicos</h3>
-                <ul>
-                    <li>SILVA, J. et al. Tecnologias Verdes: Impacto e Perspectivas. Revista de Sustentabilidade, v.15,
-                        n.2, 2023.</li>
-                    <li>PEREIRA, M. Desenvolvimento Sustentável e Inovação Tecnológica. Ciência e Ambiente, v.8, n.1,
-                        2022.</li>
-                    <li>COSTA, R. Economia Circular na Era Digital. Revista de Gestão Ambiental, v.12, n.3, 2023.</li>
-                    <li>LIMA, A. Cidades Inteligentes e Sustentabilidade. Urbanismo e Tecnologia, v.5, n.2, 2022.</li>
-                </ul>
-            </div>
-
-            <div class="reference-card">
-                <i class="bi bi-globe"></i>
-                <h3>Sites e Relatórios</h3>
-                <ul>
-                    <li>IPCC - Painel Intergovernamental sobre Mudanças Climáticas. Relatório 2023.</li>
-                    <li>ONU - Organização das Nações Unidas. Objetivos de Desenvolvimento Sustentável.</li>
-                    <li>WWF - World Wildlife Fund. Relatório Planeta Vivo 2023.</li>
-                    <li>UNEP - Programa das Nações Unidas para o Meio Ambiente. Relatório Global 2023.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="additional-section">
-            <h2>Recursos Adicionais</h2>
-            <div class="additional-grid">
-                <div class="additional-card">
-                    <h3>Documentários</h3>
-                    <ul>
-                        <li>Uma Verdade Inconveniente (2006)</li>
-                        <li>Before the Flood (2016)</li>
-                        <li>Our Planet (2019)</li>
-                        <li>Breaking Boundaries (2021)</li>
-                    </ul>
+        <div class="container">
+            <!-- Profile Section -->
+            <div class="profile-container">
+                <div class="profile-placeholder">
+                    <i class="bi bi-person"></i>
                 </div>
+                <h2>José Henrique</h2>
+                <p class="lead">Estudante de Ciência da Computação</p>
 
-                <div class="additional-card">
-                    <h3>Organizações</h3>
-                    <ul>
-                        <li>Greenpeace</li>
-                        <li>Instituto Akatu</li>
-                        <li>SOS Mata Atlântica</li>
-                        <li>Instituto Terra</li>
-                    </ul>
-                </div>
-
-                <div class="additional-card">
-                    <h3>Eventos</h3>
-                    <ul>
-                        <li>Conferência das Nações Unidas sobre Mudanças Climáticas</li>
-                        <li>Fórum Mundial da Água</li>
-                        <li>Conferência Rio+30</li>
-                        <li>Fórum de Economia Verde</li>
-                    </ul>
+                <div class="contact-links">
+                    <a href="https://github.com/HenriqueLimaJHLA" target="_blank">
+                        <i class="bi bi-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/josé-henrique-lima-alves-23a431254/" target="_blank">
+                        <i class="bi bi-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
                 </div>
             </div>
-        </section>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- About Me Section -->
+                    <div class="about-section">
+                        <h3>Quem Sou</h3>
+                        <p>Olá! Sou José Henrique, Técnico em Desenvolvimento de Sistema e estudante de Ciência da
+                            Computação na UNIP. Tenho grande interesse em
+                            tecnologias sustentáveis e como a computação pode contribuir para um futuro mais verde.</p>
+
+                        <p>Este projeto foi desenvolvido como parte da Atividade Prática Supervisionada (APS) do 1°
+                            Semestre do curso, com o objetivo de explorar a relação entre tecnologia e sustentabilidade
+                            ambiental.</p>
+
+                        <p>Minha paixão por tecnologia começou desde cedo, e ao longo dos anos tenho me dedicado a
+                            estudar como podemos utilizar o poder da computação para resolver problemas ambientais e
+                            criar soluções mais sustentáveis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <div class="sidebar-overlay" aria-hidden="true"></div>
-    <!-- Resource Hints for Performance -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-
-    <!-- Preload Critical Resources -->
-    <!-- <link rel="preload" href="../images/direito-e-sustentabilidade.jpg" as="image"> -->
-
-    <!-- Bootstrap (loaded asynchronously) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">
+        <i class="bi bi-moon" aria-hidden="true"></i>
+    </button>
 
     <!-- Theme toggle functionality -->
     <script>
@@ -260,11 +217,6 @@
             }
         });
     </script>
-
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">
-        <i class="bi bi-moon" aria-hidden="true"></i>
-    </button>
 </body>
 
 </html>

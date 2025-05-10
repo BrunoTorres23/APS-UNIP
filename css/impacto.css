@@ -1,0 +1,180 @@
+/* Estilos específicos para a página de impacto */
+.impact-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/direito-e-sustentabilidade.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 5rem 0;
+  margin-bottom: 3rem;
+  border-radius: 0 0 30px 30px;
+}
+
+.impact-category {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+.impact-category:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.impact-header {
+  padding: 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+}
+
+.impact-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.impact-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.stat-box {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.image-placeholder {
+  background-color: var(--light-bg);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+[data-theme="dark"] .image-placeholder {
+  background-color: var(--dark-bg);
+}
+
+.climate {
+  --category-color: #e74c3c;
+}
+
+.water {
+  --category-color: #3498db;
+}
+
+.waste {
+  --category-color: #2ecc71;
+}
+
+.biodiversity {
+  --category-color: #f39c12;
+}
+
+.impact-category.climate .impact-header {
+  background-color: var(--category-color);
+}
+
+.impact-category.water .impact-header {
+  background-color: var(--category-color);
+}
+
+.impact-category.waste .impact-header {
+  background-color: var(--category-color);
+}
+
+.impact-category.biodiversity .impact-header {
+  background-color: var(--category-color);
+}
+
+.impact-category.climate .impact-icon {
+  color: var(--category-color);
+}
+
+.impact-category.water .impact-icon {
+  color: var(--category-color);
+}
+
+.impact-category.waste .impact-icon {
+  color: var(--category-color);
+}
+
+.impact-category.biodiversity .impact-icon {
+  color: var(--category-color);
+}
+
+.data-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.data-card {
+  flex: 1;
+  min-width: 300px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.quote-box {
+  background-color: var(--light-bg);
+  border-left: 5px solid var(--primary-color);
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+}
+
+[data-theme="dark"] .quote-box {
+  background-color: var(--dark-bg);
+}
+
+.quote-author {
+  font-weight: 600;
+  text-align: right;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-hero {
+    padding: 3rem 0;
+  }
+}

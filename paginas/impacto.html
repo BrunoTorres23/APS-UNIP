@@ -13,193 +13,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/impacto.css">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-    <style>
-        /* Estilos específicos para a página de impacto */
-        .impact-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/direito-e-sustentabilidade.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 5rem 0;
-            margin-bottom: 3rem;
-            border-radius: 0 0 30px 30px;
-        }
-
-        .impact-category {
-            display: flex;
-            flex-direction: column;
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 2rem;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease;
-        }
-
-        .impact-category:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .impact-header {
-            padding: 1.5rem;
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-        }
-
-        .impact-body {
-            padding: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .impact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .stat-box {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            margin-bottom: 2rem;
-            border: 1px solid var(--border-color);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-        }
-
-        .image-placeholder {
-            background-color: var(--light-bg);
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-        }
-
-        [data-theme="dark"] .image-placeholder {
-            background-color: var(--dark-bg);
-        }
-
-        .climate {
-            --category-color: #e74c3c;
-        }
-
-        .water {
-            --category-color: #3498db;
-        }
-
-        .waste {
-            --category-color: #2ecc71;
-        }
-
-        .biodiversity {
-            --category-color: #f39c12;
-        }
-
-        .impact-category.climate .impact-header {
-            background-color: var(--category-color);
-        }
-
-        .impact-category.water .impact-header {
-            background-color: var(--category-color);
-        }
-
-        .impact-category.waste .impact-header {
-            background-color: var(--category-color);
-        }
-
-        .impact-category.biodiversity .impact-header {
-            background-color: var(--category-color);
-        }
-
-        .impact-category.climate .impact-icon {
-            color: var(--category-color);
-        }
-
-        .impact-category.water .impact-icon {
-            color: var(--category-color);
-        }
-
-        .impact-category.waste .impact-icon {
-            color: var(--category-color);
-        }
-
-        .impact-category.biodiversity .impact-icon {
-            color: var(--category-color);
-        }
-
-        .data-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .data-card {
-            flex: 1;
-            min-width: 300px;
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 2rem;
-            border: 1px solid var(--border-color);
-        }
-
-        .quote-box {
-            background-color: var(--light-bg);
-            border-left: 5px solid var(--primary-color);
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 0 12px 12px 0;
-            font-style: italic;
-        }
-
-        [data-theme="dark"] .quote-box {
-            background-color: var(--dark-bg);
-        }
-
-        .quote-author {
-            font-weight: 600;
-            text-align: right;
-            margin-top: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .impact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .impact-hero {
-                padding: 3rem 0;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -273,6 +93,13 @@
                     title="Referências" role="menuitem">
                     <i class="bi bi-book" aria-hidden="true"></i>
                     <span>Referências</span>
+                </a>
+            </li>
+            <li role="none">
+                <a href="./sobre.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Sobre"
+                    role="menuitem" aria-current="page">
+                    <i class="bi bi-person" aria-hidden="true"></i>
+                    <span>Sobre</span>
                 </a>
             </li>
         </ul>
@@ -476,55 +303,9 @@
 
     <!-- Bootstrap (loaded asynchronously) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="../js/layout.js"></script>
 
-    <script>
-        // Theme toggle functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const themeToggle = document.querySelector('.theme-toggle');
-            if (themeToggle) {
-                // Check for saved theme preference or use system preference
-                const savedTheme = localStorage.getItem('theme');
-                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-                // Set initial theme
-                if (savedTheme) {
-                    document.documentElement.setAttribute('data-theme', savedTheme);
-                    updateThemeIcon(savedTheme, themeToggle);
-                } else if (prefersDarkScheme.matches) {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    updateThemeIcon('dark', themeToggle);
-                } else {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                    updateThemeIcon('light', themeToggle);
-                }
-
-                // Add click event listener
-                themeToggle.addEventListener('click', function () {
-                    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-                    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-                    document.documentElement.setAttribute('data-theme', newTheme);
-                    localStorage.setItem('theme', newTheme);
-                    updateThemeIcon(newTheme, themeToggle);
-                });
-            }
-
-            // Update theme icon based on current theme
-            function updateThemeIcon(theme, button) {
-                const icon = button.querySelector('i');
-                if (icon) {
-                    if (theme === 'light') {
-                        icon.className = 'bi bi-moon';
-                        button.setAttribute('title', 'Mudar para tema escuro');
-                    } else {
-                        icon.className = 'bi bi-sun';
-                        button.setAttribute('title', 'Mudar para tema claro');
-                    }
-                }
-            }
-        });
-    </script>
+    <script src="../js/optimized.js" defer></script>
+    <script src="../js/theme.js"></script>
 </body>
 
 </html>
