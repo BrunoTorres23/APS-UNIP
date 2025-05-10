@@ -24,10 +24,8 @@ Este projeto é um website informativo sobre tecnologias sustentáveis e inovaç
 
 ```
 .
-├── browser-testing/     # Ferramentas e documentação para testes cross-browser
 ├── css/
 │   ├── style.css       # Estilos principais
-│   └── browser-fixes.css # Correções específicas para navegadores
 ├── js/
 │   ├── main.js         # Ponto de entrada principal
 │   ├── bundle.js       # Bundle para navegadores legados
@@ -37,7 +35,6 @@ Este projeto é um website informativo sobre tecnologias sustentáveis e inovaç
 ├── images/
 ├── index.html
 ├── paginas/           # Páginas do site
-└── service-worker.js  # Service worker para funcionalidade offline
 ```
 
 ## Características

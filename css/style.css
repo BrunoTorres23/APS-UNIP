@@ -266,7 +266,7 @@
 }
 
 [data-theme="dark"] #metodologia {
-  background-color: var(--card-bg);
+  background-color: var(--card-bg) !important;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -480,7 +480,7 @@ header p {
 
 /* Section Enhancements */
 section {
-  background: white;
+  background: var(--card-bg);
   border-radius: 12px;
   padding: 2.5rem;
   margin-bottom: 4rem;
@@ -492,12 +492,7 @@ section {
 
 /* Metodologia Section */
 #metodologia {
-  background-color: white;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.95),
-      rgba(255, 255, 255, 0.95)
-    ),
-    none;
+  background-color: var(--card-bg) !important;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -2356,19 +2351,6 @@ img.lazy.loaded {
 /* Ensure text is visible in both light and dark modes */
 .implementation-card ul li::before {
   color: var(--accent-color);
-}
-
-/* Make sure all text elements have proper contrast in light mode */
-section h2,
-section h3,
-section p,
-section li {
-  color: var(--text-color);
-}
-
-section p,
-section li {
-  color: var(--text-secondary);
 }
 
 /* Corrigindo a cor do link de política de privacidade */
