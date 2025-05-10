@@ -267,11 +267,6 @@
 
 [data-theme="dark"] #metodologia {
   background-color: var(--card-bg);
-  background-image: linear-gradient(
-      rgba(30, 30, 30, 0.95),
-      rgba(30, 30, 30, 0.95)
-    ),
-    var(--metodologia-bg-image, url("images/direito-e-sustentabilidade.jpg"));
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -355,10 +350,6 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--light-bg);
-  background-image: var(
-    --bg-image,
-    var(--bg-main-image, none /* Removed URL */)
-  );
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -381,7 +372,6 @@ body {
   margin: 0;
   user-select: none;
 }
-/* Remove the previous body::before background */
 body::before {
   display: none;
 }
@@ -679,18 +669,6 @@ section h2::after {
 
 .impact-card:hover::before {
   opacity: 0.2;
-}
-
-.impact-card.climate::before {
-  background-image: var(--climate-bg-image, none /* Removed URL */);
-}
-
-.impact-card.water::before {
-  background-image: var(--water-bg-image, none /* Removed URL */);
-}
-
-.impact-card.waste::before {
-  background-image: var(--waste-bg-image, none /* Removed URL */);
 }
 
 .impact-card > * {
@@ -1848,6 +1826,30 @@ img.lazy.loaded {
   transform: rotate(180deg);
 }
 
+.btn-download-pdf {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--card-bg);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  z-index: 1000;
+  font-weight: bold !important;
+}
+.btn-download-pdf i {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  transition: var(--transition);
+  font-weight: bold !important;
+}
 /* Ajuste para dispositivos móveis */
 @media (max-width: 768px) {
   .theme-toggle {
