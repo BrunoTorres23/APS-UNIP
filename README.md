@@ -24,7 +24,8 @@ Este projeto é um website informativo sobre tecnologias sustentáveis e inovaç
 
 ```bash
 .
-├── .vscode/            # Configurações do Visual Studio Code
+├── .vscode/            
+│   ├── settings.json   # Configurações do Visual Studio Code
 ├── css/
 │   ├── style.css       # Estilos principais
 │   ├── impacto.css     # Estilos para a seção de impacto ambiental
@@ -37,7 +38,16 @@ Este projeto é um website informativo sobre tecnologias sustentáveis e inovaç
 ├── js/
 │   ├── optimized.js         # Script otimizado para o site
 │   ├── theme.js       # Script para alternar entre temas
-├── paginas/           # Páginas do site
+├── paginas/           
+│   ├── biblioteca.html # Página da biblioteca de recursos
+│   ├── contato.html    # Página de contato
+│   ├── heuristicas.html # Página de heurísticas
+│   ├── impacto.html   # Página de impacto ambiental
+│   ├── noticias.html  # Página de notícias
+│   ├── sobre.html     # Página sobre
+│   ├── solucoes.html  # Página de soluções sustentáveis
+│   ├── tecnologias.html # Página de tecnologias verdes
+│   └── referencias.html # Página de referências
 ├── index.html
 └── README.md # Arquivo de leitura
 ```
