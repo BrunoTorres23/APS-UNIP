@@ -61,8 +61,6 @@ Este projeto é um website informativo sobre tecnologias sustentáveis e inovaç
 2. Abra o arquivo `index.html` em um navegador web
 3. Navegue pelas diferentes seções usando o menu lateral
 
-
-
 ## Contribuição
 
 Este é um projeto acadêmico desenvolvido em grupo. Para contribuições, entre em contato com os desenvolvedores.
