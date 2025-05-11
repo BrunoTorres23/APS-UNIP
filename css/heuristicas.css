@@ -66,6 +66,44 @@
   padding: 1.5rem;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  color: var(--text-color);
+}
+
+.heuristic-card h3 {
+  color: var(--primary-color);
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.heuristic-card p {
+  color: var(--text-secondary);
+}
+
+.card-details h4 {
+  color: var(--primary-color);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.card-details ul {
+  list-style-type: none;
+  padding-left: 0.5rem;
+}
+
+.card-details ul li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.card-details ul li::before {
+  content: "✓";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
 }
 
 .heuristic-card:hover {
@@ -86,4 +124,54 @@
   .heuristic-image {
     height: 180px;
   }
+}
+
+/* Estilos específicos para recursos relacionados na página de heurísticas */
+.related-resources .resource-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: var(--shadow-sm);
+}
+
+.related-resources .resource-card i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.related-resources .resource-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.related-resources .resource-card p {
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.related-resources .resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* Ajuste específico para modo light */
+.related-resources .resource-card.text-dark h3 {
+  color: var(--primary-color);
+}
+
+.related-resources .resource-card.text-dark p {
+  color: var(--text-secondary);
+}
+
+.related-resources .resource-card.text-dark i {
+  color: var(--primary-color);
 }
