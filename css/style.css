@@ -2385,3 +2385,65 @@ img.lazy.loaded {
 [data-theme="dark"] .additional-card ul li {
   color: var(--text-secondary);
 }
+
+/* Corrigindo cores das listas em todos os modos */
+.feature-card ul li,
+.impact-card ul li,
+.solution-card ul li,
+.reference-card ul li,
+.data-card ul li,
+.case-card ul li,
+.implementation-card ul li,
+.additional-card ul li,
+.content-card ul li,
+.info-banner ul li,
+.card ul li {
+  color: var(--text-secondary) !important;
+}
+
+/* Garantindo que as listas sejam visíveis em ambos os modos */
+ul {
+  list-style-position: inside;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Removendo regras conflitantes */
+[data-theme="dark"] .card p,
+[data-theme="dark"] .card ul li {
+  color: var(--text-secondary) !important;
+}
+
+/* Garantindo que as listas no modo light tenham cor adequada */
+body:not([data-theme="dark"]) .card ul li,
+body:not([data-theme="dark"]) .impact-card ul li,
+body:not([data-theme="dark"]) .content-card ul li {
+  color: var(--text-secondary) !important;
+}
+
+/* CORREÇÃO DEFINITIVA PARA TEXTOS BRANCOS EM LISTAS */
+body:not([data-theme="dark"]) ul li,
+body:not([data-theme="dark"]) .card ul li,
+body:not([data-theme="dark"]) .feature-card ul li,
+body:not([data-theme="dark"]) .impact-card ul li,
+body:not([data-theme="dark"]) .solution-card ul li,
+body:not([data-theme="dark"]) .reference-card ul li,
+body:not([data-theme="dark"]) .data-card ul li,
+body:not([data-theme="dark"]) .case-card ul li,
+body:not([data-theme="dark"]) .implementation-card ul li,
+body:not([data-theme="dark"]) .additional-card ul li,
+body:not([data-theme="dark"]) .content-card ul li,
+body:not([data-theme="dark"]) .info-banner ul li {
+  color: #6b7a8f !important; /* Valor fixo para o modo light */
+}
+
+/* Garantir que os links dentro de listas mantenham sua cor */
+body:not([data-theme="dark"]) ul li a {
+  color: var(--primary-color) !important;
+}
+
+/* Garantir que os textos em negrito dentro de listas sejam visíveis */
+body:not([data-theme="dark"]) ul li strong,
+body:not([data-theme="dark"]) ul li b {
+  color: var(--text-color) !important;
+}
