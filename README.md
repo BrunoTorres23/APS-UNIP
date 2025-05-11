@@ -22,7 +22,7 @@ Este projeto é um website informativo sobre tecnologias sustentáveis e inovaç
 
 ## Estrutura do Projeto
 
-```
+```bash
 .
 ├── .vscode/            # Configurações do Visual Studio Code
 ├── css/
