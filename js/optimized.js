@@ -1,8 +1,3 @@
-/**
- * Tecnologia e Sustentabilidade - Scripts Otimizados
- * Versão reduzida que mantém funcionalidades essenciais
- */
-
 document.addEventListener('DOMContentLoaded', () => {
   // Configurações e detecção de recursos
   const features = {
@@ -12,11 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     supportsModules: 'noModule' in document.createElement('script')
   };
 
-  // Determina se está em subpágina
-  const isSubpage = () => {
-    return window.location.pathname.includes('/paginas/') ||
-      window.location.pathname.includes('\\paginas\\');
-  };
 
   // Lazy Loading - Funcionalidade essencial
   function lazyLoad() {
@@ -30,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = entry.target;
             if (img.tagName.toLowerCase() === 'img') {
               if (img.dataset.src) {
-                img.src = ''; // Removed image source
+                img.src = '';
                 if (img.dataset.srcset) img.srcset = '';
               }
               img.classList.add('loaded');
@@ -47,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       // Fallback simples
       lazyImages.forEach(img => {
-        if (img.dataset.src) img.src = ''; // Removed image source
+        if (img.dataset.src) img.src = '';
         img.classList.add('loaded');
       });
     }

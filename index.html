@@ -18,9 +18,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     </noscript>
-    <!-- Critical CSS -->
     <link rel="stylesheet" href="./css/style.css" media="all">
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
@@ -29,29 +27,11 @@
 </head>
 
 <body>
-    <!-- Background Image -->
     <div class="bg-wrapper lazy-background">
         <img src="" alt="Background" class="bg-image"
             style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0; transition: opacity 0.8s ease-in-out;">
     </div>
 
-    <!-- SVG Symbols -->
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="leaf-icon" viewBox="0 0 24 24">
-            <path
-                d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20C19,20,22,3,22,3,21,5,14,5.25,9,6.25S2,11.5,2,13.5a6.23,6.23,0,0,0,1.75,3.75C10,8,17,8,17,8Z" />
-        </symbol>
-        <symbol id="water-icon" viewBox="0 0 24 24">
-            <path
-                d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10,10-4.48,10-10S17.52,2,12,2Zm0,18c-4.41,0-8-3.59-8-8s3.59-8,8-8,8,3.59,8,8-3.59,8-8,8Z" />
-        </symbol>
-        <symbol id="cloud-icon" viewBox="0 0 24 24">
-            <path
-                d="M19.35,10.04C18.67,6.59,15.64,4,12,4,9.11,4,6.6,5.64,5.35,8.04,2.34,8.36,0,10.91,0,14c0,3.31,2.69,6,6,6h13c2.76,0,5-2.24,5-5,0-2.64-2.05-4.78-4.65-4.96Z" />
-        </symbol>
-    </svg>
-
-    <!-- Sidebar -->
     <nav class="sidebar" role="navigation" aria-label="Menu principal">
         <div class="sidebar-header">
             <i class="bi bi-leaf-fill" aria-hidden="true"></i>
@@ -130,15 +110,9 @@
         </ul>
     </nav>
 
-    <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" aria-hidden="true"></div>
-
-    <!-- Main Content -->
     <main id="content" role="main">
-        <!-- Header -->
-        <header role="banner">
-            <img src="./images/direito-e-sustentabilidade.jpg" alt="Header Background" class="header-bg-image"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0.8;">
+        <header class="banner-img-header" role="banner">
             <div class="container">
                 <button class="menu-toggle d-md-none" aria-label="Abrir menu" aria-expanded="false"
                     aria-controls="sidebar">
@@ -150,7 +124,6 @@
             </div>
         </header>
 
-        <!-- Introdução Section -->
         <section id="introducao" aria-labelledby="introducao-heading">
             <h2 id="introducao-heading">Introdução</h2>
             <div class="row">
@@ -198,7 +171,6 @@
             </div>
         </section>
 
-        <!-- Tecnologias Section -->
         <section id="tecnologias" aria-labelledby="tecnologias-heading">
             <h2 id="tecnologias-heading">Tecnologias Verdes</h2>
             <div class="row g-4">
@@ -238,9 +210,12 @@
             </div>
         </section>
 
-        <!-- Impacto Section -->
         <section id="impacto" class="impact-section with-bg-image">
-            <h2>Impacto Ambiental</h2>
+            <div class="container">
+                <h2>Impacto Ambiental</h2>
+                <img src="https://yatto.com.br/wp-content/uploads/2024/01/impacto-ambiental-post.jpg"
+                    class="img-impacto-ambiental" alt="Impacto Ambiental">
+            </div>
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="impact-card climate">
@@ -266,7 +241,6 @@
             </div>
         </section>
 
-        <!-- Metodologia Section -->
         <section id="metodologia" aria-labelledby="metodologia-heading">
             <h2 id="metodologia-heading">Metodologia</h2>
             <div class="row g-4">
@@ -296,7 +270,6 @@
                 </div>
             </div>
         </section>
-        <!-- Conclusão Section -->
         <section id="referencias" aria-labelledby="referencias-heading">
             <h2 id="referencias-heading">Conclusão</h2>
             <div class="row">
@@ -306,7 +279,6 @@
                 </div>
             </div>
         </section>
-        <!-- Referências Section -->
         <section id="referencias" aria-labelledby="referencias-heading">
             <h2 id="referencias-heading">Referências</h2>
             <div class="row">
@@ -325,17 +297,14 @@
         </section>
     </main>
 
-    <!-- Theme Toggle Button -->
     <button class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">
         <i class="bi bi-moon" aria-hidden="true"></i>
     </button>
 
-    <!-- Theme Toggle Button -->
     <a href="#" download="./README.md" target="_blank" class="btn-download-pdf" rel="noopener noreferrer">
         <i class="bi bi-file-earmark-pdf text-danger" aria-hidden="true"></i>
     </a>
 
-    <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 

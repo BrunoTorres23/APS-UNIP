@@ -9,12 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/impacto.css">
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
@@ -23,10 +21,8 @@
 </head>
 
 <body>
-    <!-- Background Image -->
     <div class="bg-wrapper lazy-background"></div>
 
-    <!-- Sidebar -->
     <nav class="sidebar" role="navigation" aria-label="Menu principal">
         <div class="sidebar-header">
             <i class="bi bi-leaf-fill" aria-hidden="true"></i>
@@ -105,25 +101,21 @@
         </ul>
     </nav>
 
-    <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" aria-hidden="true"></div>
 
-    <!-- Main Content -->
     <main id="content" role="main">
-        <!-- Hero Section -->
-        <div class="impact-hero">
-            <div class="container text-center">
+        <header class="header impact-hero" role="banner">
+            <div class="container">
                 <button class="menu-toggle d-md-none" aria-label="Abrir menu" aria-expanded="false"
                     aria-controls="sidebar">
                     <i class="bi bi-list" aria-hidden="true"></i>
                 </button>
                 <h1>Impacto Ambiental</h1>
-                <p class="lead">Análise dos efeitos da tecnologia no meio ambiente</p>
+                <p>Análise dos efeitos da tecnologia no meio ambiente</p>
             </div>
-        </div>
+        </header>
 
         <div class="container">
-            <!-- Breadcrumb -->
             <nav aria-label="Navegação estrutural">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../index.html">Início</a></li>
@@ -353,19 +345,29 @@
 
             <!-- Tecnologia para Proteção Ambiental -->
             <section class="impact-section bg-light p-4 rounded mb-5">
-                <h2 class="text-center mb-4">Tecnologia para Proteção Ambiental</h2>
+                <div class="container text-center mt-5 mb-5">
+                    <h2 class="text-center mb-4">Tecnologia para Proteção Ambiental</h2>
+                    <br>
+                    <img src="https://geoinova.com.br/wp-content/uploads/2023/04/03-5.jpg"
+                        alt="Tecnologia para Proteção Ambiental" class="img-fluid rounded shadow" loading="lazy">
+                    <br><br>
+                    <img src="https://infoamazonia.org/wp-content/uploads/2020/08/luismaurano-inpe-deter-intenso_Still006.jpg"
+                        alt="DETER INPE" class="img-fluid rounded shadow" loading="lazy">
+                </div>
                 <div class="row g-4">
                     <div class="col-md-6">
                         <div class="card h-100">
                             <div class="card-body">
                                 <h3 class="card-title">Inovações Brasileiras</h3>
                                 <ul>
-                                    <li>Sistemas PRODES e DETER do INPE monitoram desmatamento na Amazônia com precisão
+                                    <li>Sistemas PRODES e DETER do INPE monitoram desmatamento na Amazônia com
+                                        precisão
                                         de 95% através de sensores remotos</li>
                                     <li>O projeto MapBiomas utiliza processamento na nuvem para analisar imagens de
                                         satélite, criando mapeamentos anuais de uso do solo desde 1985</li>
                                     <li>A empresa Tembici implementou sistema de compartilhamento de bicicletas com
-                                        monitoramento em tempo real que diminuiu emissões de carbono em 1.800 toneladas
+                                        monitoramento em tempo real que diminuiu emissões de carbono em 1.800
+                                        toneladas
                                     </li>
                                 </ul>
                             </div>
@@ -379,9 +381,11 @@
                                 <h3 class="card-title">Inovações Internacionais</h3>
                                 <ul>
                                     <li>A iniciativa Global Forest Watch usa inteligência artificial e imagens de
-                                        satélite para monitoramento florestal quase instantâneo, detectando desmatamento
+                                        satélite para monitoramento florestal quase instantâneo, detectando
+                                        desmatamento
                                         com 92% de precisão</li>
-                                    <li>A empresa Ørsted transformou-se de uma das mais intensivas em carbono da Europa
+                                    <li>A empresa Ørsted transformou-se de uma das mais intensivas em carbono da
+                                        Europa
                                         para líder mundial em energia eólica marítima</li>
                                     <li>Tecnologia de bases flutuantes expandiu o potencial de instalação de energia
                                         eólica em 240%</li>
@@ -445,16 +449,13 @@
         </div>
     </main>
 
-    <!-- Theme Toggle Button -->
     <button class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">
         <i class="bi bi-moon" aria-hidden="true"></i>
     </button>
 
-    <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
-    <!-- Bootstrap (loaded asynchronously) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <script src="../js/optimized.js" defer></script>

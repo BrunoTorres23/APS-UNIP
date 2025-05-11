@@ -175,6 +175,22 @@
   color: var(--text-color);
 }
 
+.banner-img-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/direito-e-sustentabilidade.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.img-impacto-ambiental {
+  position: relative;
+  transform: rotate(90deg);
+  height: 75%;
+  width: auto;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center;
+  top: 30px;
+}
 /* Theme Toggle Button */
 .theme-toggle {
   position: fixed;
@@ -1857,6 +1873,12 @@ img.lazy.loaded {
   .theme-toggle i {
     font-size: 1.2rem;
   }
+  .img-impacto-ambiental {
+    top: 0;
+    transform: rotate(0deg);
+    height: 60%;
+    margin: 0 auto;
+}
 }
 
 /* Loading Indicator */
