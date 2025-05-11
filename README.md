@@ -24,17 +24,22 @@ Este projeto é um website informativo sobre tecnologias sustentáveis e inovaç
 
 ```
 .
+├── .vscode/            # Configurações do Visual Studio Code
 ├── css/
 │   ├── style.css       # Estilos principais
+│   ├── impacto.css     # Estilos para a seção de impacto ambiental
+│   ├── noticias.css    # Estilos para a seção de notícias
+│   ├── sobre.css       # Estilos para a seção sobre
+│   ├── solucoes.css    # Estilos para a seção de soluções sustentáveis
+│   ├── tecnologias.css # Estilos para a seção de tecnologias verdes
+│   └── heuristicas.css # Estilos para a seção de heurística
+├── images/ # Imagens usadas no site
 ├── js/
-│   ├── main.js         # Ponto de entrada principal
-│   ├── bundle.js       # Bundle para navegadores legados
-│   ├── browser-compatibility.js # Script de detecção de compatibilidade
-│   ├── script.js       # Scripts gerais
-│   └── modules/        # Módulos JavaScript
-├── images/
-├── index.html
+│   ├── optimized.js         # Script otimizado para o site
+│   ├── theme.js       # Script para alternar entre temas
 ├── paginas/           # Páginas do site
+├── index.html
+└── README.md # Arquivo de leitura
 ```
 
 ## Características
