@@ -1,0 +1,127 @@
+.faq-section {
+  padding: 3rem 0;
+}
+
+.faq-category {
+  margin-bottom: 2.5rem;
+}
+
+.faq-category h2 {
+  color: var(--bs-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  border-bottom: 2px solid var(--bs-primary);
+  padding-bottom: 0.5rem;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: var(--bs-body-bg);
+}
+
+.accordion-button {
+  font-weight: 500;
+  padding: 1rem 1.25rem;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--bs-primary);
+  background-color: rgba(var(--bs-primary-rgb), 0.1);
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(var(--bs-primary-rgb), 0.5);
+}
+
+.accordion-body {
+  padding: 1.25rem;
+  background-color: var(--bs-body-bg);
+}
+
+.accordion-body ul {
+  padding-left: 1.25rem;
+  margin-bottom: 0;
+}
+
+.accordion-body li {
+  margin-bottom: 0.5rem;
+}
+
+.faq-contact {
+  background-color: rgba(var(--bs-primary-rgb), 0.05);
+  padding: 3rem 0;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+}
+
+.faq-contact h2 {
+  margin-bottom: 1rem;
+  color: var(--bs-primary);
+}
+
+.faq-contact p {
+  margin-bottom: 1.5rem;
+}
+
+.faq-contact .btn-primary {
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+}
+
+/* Aumentando a largura do FAQ */
+.col-lg-8.mx-auto {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+/* Modo Escuro */
+[data-theme="dark"] .accordion-item,
+[data-theme="dark"] .accordion-button,
+[data-theme="dark"] .accordion-body {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .accordion-button:not(.collapsed) {
+  background-color: rgba(var(--bs-primary-rgb), 0.2);
+}
+
+[data-theme="dark"] .faq-contact {
+  background-color: rgba(var(--bs-primary-rgb), 0.15);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .accordion-button::after {
+  filter: brightness(1.8);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 2rem 0;
+  }
+
+  .faq-category h2 {
+    font-size: 1.5rem;
+  }
+
+  .accordion-button {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  .accordion-body {
+    padding: 1rem;
+  }
+
+  .faq-contact {
+    padding: 2rem 0;
+  }
+}
