@@ -41,6 +41,7 @@ Este projeto é um website informativo sobre tecnologias sustentáveis e inovaç
 ├── paginas/           
 │   ├── biblioteca.html # Página da biblioteca de recursos
 │   ├── contato.html    # Página de contato
+│   ├── faq.html        # Página de FAQ (Perguntas Frequentes)
 │   ├── heuristicas.html # Página de heurísticas
 │   ├── impacto.html   # Página de impacto ambiental
 │   ├── noticias.html  # Página de notícias
