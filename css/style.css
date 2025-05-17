@@ -456,10 +456,12 @@ header h1 {
 
 @media (max-width: 768px) {
   .logo {
+    position: relative;
+    float: right;
     width: 60px;
     height: 60px;
-    right: 10px;
-    top: 10px;
+    right: 0px;
+    top: 0px;
   }
 }
 @keyframes float {
@@ -1771,8 +1773,8 @@ img.lazy.loaded {
 /* Menu Toggle Button */
 .menu-toggle {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 0rem;
+  left: 0.5rem;
   background: white;
   border: none;
   border-radius: 50%;
@@ -1878,7 +1880,7 @@ img.lazy.loaded {
     transform: rotate(0deg);
     height: 60%;
     margin: 0 auto;
-}
+  }
 }
 
 /* Loading Indicator */

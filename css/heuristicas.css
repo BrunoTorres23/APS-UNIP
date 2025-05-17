@@ -175,3 +175,12 @@
 .related-resources .resource-card.text-dark i {
   color: var(--primary-color);
 }
+
+@media screen and (max-width: 768px) {
+  section {
+    padding: 0rem;
+  }
+  .card-container {
+    justify-content: center;
+  }
+}

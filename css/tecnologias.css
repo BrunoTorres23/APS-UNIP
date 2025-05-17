@@ -172,6 +172,10 @@
   .info-banner {
     margin-bottom: 1.5rem;
   }
+  .img-arvore {
+    height: 100px !important;
+    border-radius: 12px;
+  }
 }
 
 /* Corrigindo cores das listas no modo light - aumentando especificidade */
