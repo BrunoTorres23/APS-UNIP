@@ -1,0 +1,132 @@
+/* Custom styles for the Educação e Conscientização Ambiental page */
+
+/* Estilos gerais */
+.intro-message {
+  background-color: var(--light-bg);
+  border-left: 4px solid var(--primary-color);
+}
+
+.tips-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.tips-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.app-item {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.app-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.resource-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.quiz-container {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.stats-container {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: var(--light-bg);
+  border: 1px solid var(--border-color);
+}
+
+.stat-item {
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: var(--card-bg);
+}
+
+/* Modo escuro */
+[data-theme="dark"] .bg-light {
+  background-color: var(--card-bg) !important;
+}
+
+[data-theme="dark"] .intro-message {
+  background-color: var(--dark-bg);
+  border-left: 4px solid var(--accent-color);
+}
+
+[data-theme="dark"] .tips-card,
+[data-theme="dark"] .app-item,
+[data-theme="dark"] .resource-card,
+[data-theme="dark"] .quiz-container {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .stats-container {
+  background-color: var(--dark-bg);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .stat-item {
+  background-color: var(--card-bg);
+}
+
+[data-theme="dark"] .alert-success {
+  background-color: rgba(25, 135, 84, 0.15);
+  color: var(--text-color);
+  border-color: rgba(25, 135, 84, 0.4);
+}
+
+[data-theme="dark"] .card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .card-body {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .card-title {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .card-text {
+  color: var(--text-secondary);
+}
+
+/* Ajustes para formulários no quiz */
+[data-theme="dark"] .form-check-label {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .form-check-input:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .app-item,
+  .tips-card,
+  .resource-card {
+    margin-bottom: 1rem;
+  }
+}
